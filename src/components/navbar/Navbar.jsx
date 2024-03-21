@@ -1,8 +1,9 @@
 import Link from "next/link";
+import styles from "./navbar.module.scss";
 export default function Navbar() {
   return (
     <header>
-      <nav>
+      <nav className="flex justify-between">
         <Link href="/">
           <div>Logo Container</div>
         </Link>
