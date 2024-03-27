@@ -1,7 +1,12 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import localFont from "next/font/local";
 import { FaBars, FaTimes } from "react-icons/fa";
+
+const myfont = localFont({
+  src: "../../fonts/CrotahFreeVersionItalic-z8Ev3.ttf",
+});
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +16,12 @@ export default function Navbar() {
       <div className="bg-stone-300 shadow-md">
         <nav className="flex w-11/12 m-auto justify-between h-16 items-center text-gray-500 text-lg">
           <Link href="/">
-            <div className="cursor-pointer">Logo Container</div>
+            <h2
+              style={myfont.style}
+              className="cursor-pointer text-xl text-blue-700	"
+            >
+              LoveLifeCoach
+            </h2>
           </Link>
           <ul className="hidden md:flex gap-2 w-1/2 justify-between pr-6 lg:w-1/3">
             <Link href="/">
@@ -36,20 +46,32 @@ export default function Navbar() {
             </Link>
           </ul>
           <div className="text-base md:hidden">
-            <FaBars onClick={() => setIsOpen(!isOpen)} className="text-2xl" />
+            {isOpen ? (
+              <FaTimes
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-2xl"
+              />
+            ) : (
+              <FaBars onClick={() => setIsOpen(!isOpen)} className="text-2xl" />
+            )}
           </div>
         </nav>
       </div>
 
       {isOpen && (
-        <div className="absolute top-0  w-full h-screen  pt-4 pl-7 pr-7 text-gray-500 mt-0 text-lg bg-stone-300 shadow-md  md:hidden">
-          <div className="flex justify-between pt-1 pb-4">
-            <div>Logo Container</div>
+        <div className="absolute top-15  w-full h-80  pt-4 pl-7 pr-7 text-gray-500 mt-0 text-lg bg-stone-200 shadow-md  md:hidden">
+          {/* <div className="flex justify-between pt-1 pb-4">
+            <h2
+              style={myfont.style}
+              className="cursor-pointer text-xl text-blue-700"
+            >
+              LoveLifeCoach
+            </h2>
             <FaTimes onClick={() => setIsOpen(!isOpen)} className="text-2xl" />
-          </div>
+          </div> */}
           <ul className="flex flex-col text-2xl items-end">
             <Link href="/">
-              <li onClick={() => setIsOpen(false)} className="pb-8 mt-20">
+              <li onClick={() => setIsOpen(false)} className="pb-8 mt-8">
                 Home -
               </li>
             </Link>
