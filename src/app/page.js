@@ -32,6 +32,11 @@ export default function Home() {
         <div className={styles.image_container}>
           <img src="/images/bka.jpg" />
         </div>
+        <img
+          className={styles.cover_bottom}
+          src="/images/cover-images/cover-bottom.png"
+          alt="cover-bottom"
+        />
       </div>
     </main>
   );
