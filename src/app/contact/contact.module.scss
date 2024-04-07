@@ -1,0 +1,56 @@
+.contact_container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  .contact_info {
+    .header {
+      color: blue;
+      margin-top: 50px;
+      display: inline;
+      font-size: 28px;
+      border-bottom: 1px solid black;
+      padding-bottom: 3px;
+    }
+    .name {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    .credentials {
+      font-size: 14px;
+      color: blue;
+    }
+    .card_container {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      .contact_card {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        padding: 20px;
+        background-color: red;
+        .fa_container {
+          background-color: green;
+          display: flex;
+          justify-content: center;
+          border-radius: 50%;
+          background-color: green;
+          margin-right: 10px;
+          padding: 12px;
+
+          .fa_icon {
+            font-size: 25px;
+          }
+        }
+      }
+    }
+    .sub_text {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+  }
+}
