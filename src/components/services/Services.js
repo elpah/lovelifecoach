@@ -1,8 +1,8 @@
-import styles from "./about.module.scss";
+import styles from "./services.module.scss";
 import ServiceCard from "@/components/service-card/ServiceCard";
 import { FaCheck, FaQuestion } from "react-icons/fa";
 
-export default function page() {
+export default function Services() {
   const services = [
     {
       serviceName: "Individual and Group Counselling",
@@ -34,17 +34,7 @@ export default function page() {
         Explore the significance of counseling in promoting mental health,
         emotional well-being, and personal growth.
       </p>
-      <h2 className={styles.service_header}>What I do.</h2>
 
-      <div className={styles.service_container}>
-        {services.map((service, index) => (
-          <ServiceCard
-            key={index}
-            cardName={service.serviceName}
-            cardImage={service.serviceImage}
-          />
-        ))}
-      </div>
       <section className={styles.why_section}>
         <div className={styles.why_image_container}>
           <img
@@ -76,30 +66,17 @@ export default function page() {
           </div>
         </div>
       </section>
-      <section className={styles.about_section_container}>
-        <div className={styles.about_text_container}>
-          <h2 className={styles.about_header}>
-            Building Trust, Nurturing Hope.
-          </h2>
-          <p className={styles.about_text}>
-            Bless Kofi Asiedu LOREM IPSUM Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt molli
-          </p>
-          <p className={styles.signature}>Bless Kofi Asiedu</p>
-        </div>
-        <div className={styles.about_image_container}>
-          <img
-            className={styles.about_image}
-            src="/images/bka.jpg"
-            alt="counsellor's Photo"
+      <h2 className={styles.service_header}>What I do.</h2>
+
+      <div className={styles.service_container}>
+        {services.map((service, index) => (
+          <ServiceCard
+            key={index}
+            cardName={service.serviceName}
+            cardImage={service.serviceImage}
           />
-        </div>
-      </section>
+        ))}
+      </div>
     </div>
   );
 }
