@@ -1,108 +1,67 @@
 .main {
-  .cover_container {
-    // position: relative;
-    background-color: rgb(230, 230, 230);
-    display: flex;
-    // height: 80vh;
-    // padding: 20px;
-    .header_container {
-      display: flex;
-      .header_div {
-        // flex-direction: column;
-        .intro_paragraph {
-          // margin-top: 130px;
-          margin-bottom: 10px;
-          font-size: 10px;
-        }
-        .header {
-          margin-bottom: 10px;
-          font-size: 20px;
-          line-height: 1.3em;
-          .header_span {
-            background-color: #9e9ee3;
-          }
-        }
-        .sub {
-          margin-bottom: 20px;
-          font-size: 10px;
-        }
-        .button_container {
-          display: flex;
-          .button {
-            font-size: 10px;
-            padding: 7px;
-            min-width: 90px;
-            // height: 30px;
-          }
-          .button_lorem {
-            border: 1px solid #5959e4;
-            margin-right: 10px;
-          }
-          .button_ipsum {
-            background-color: #5959e4;
-            color: white;
-          }
-        }
+  width: 90%;
+  margin: auto;
+  .details_container {
+    .i_am {
+      color: #000;
+      font-size: 0.8rem;
+      margin-top: 40px;
+      margin-bottom: 7px;
+    }
+    .name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+    .title {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      .title_tag {
+        padding: 5px;
+        background-color: #dbdef9;
+        border-radius: 16px;
+        font-weight: 600;
+        color: #0010a3;
       }
     }
-    .image_container {
-      display: none;
+    .paragraph {
+      font-size: 0.8rem;
+      margin-bottom: 25px;
+    }
+    .button {
+      background-color: #0010a3;
+      color: #fafafa;
+      border-radius: 8px;
+      width: 180px;
+      padding: 7px;
+      margin-bottom: 30px;
+    }
+  }
+  .image_container_bg {
+    background: url("/images/background/mobileCeoBg.png");
+    background-size: 100% 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    // justify-content: ;
+    // min-height: 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    .ceo_img {
+      padding-top: 20px;
+      // border-radius: 50%;
+      margin-top: 10px;
+      border-radius: 50%;
+      // width: ;
+      // height: 150px;
+      // width: 0%;
     }
   }
 }
-@media screen and (min-width: 768px) {
-  .main {
-    .cover_container {
-      height: 80vh;
-      .header_container {
-        width: 55%;
-        justify-content: center;
-        align-items: center;
-        .header_div {
-          .intro_paragraph {
-            margin-top: 20px;
-            // margin-bottom: -1px;
-            font-size: 13px;
-          }
-          .header {
-            margin-bottom: 10px;
-            font-size: 40px;
-          }
-          .sub {
-            margin-bottom: 25px;
-            font-size: 13px;
-          }
-          .button_container {
-            .button {
-              font-size: 16px;
-              padding: 8px;
-              min-width: 120px;
-              transition: all 0.2s ease-in-out;
-              &:hover {
-                transform: scale(1.1);
-              }
-            }
-            .button_lorem {
-              margin-right: 20px;
-            }
-          }
-        }
-      }
-      .image_container {
-        width: 45%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        // display: block;
-        min-width: 250px;
-        // minheight: 300px;
-        image {
-          // width: 500px;
-          // width: 300px;
-        }
-      }
-    }
-  }
+
+@media screen and (min-width: 400px) {
 }
 @media screen and (min-width: 1024px) {
   .main {
