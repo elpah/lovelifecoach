@@ -32,7 +32,7 @@
       .button {
         background-color: #0010a3;
         color: #fafafa;
-        border-radius: 8px;
+        border-radius: 4px;
         width: 180px;
         padding: 7px;
         margin-bottom: 20px;
@@ -60,26 +60,29 @@
     }
   }
   .experience_section {
+    border: 1px solid #c4c7e9;
     margin-top: 40px;
     background-color: #e5e5e5;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    min-height: 500px;
+    height: 407px;
     align-items: center;
-    padding: 70px 0;
+    padding: 50px 0;
+    border-radius: 16px;
 
     .ex_card {
       display: flex;
       flex-direction: column;
       align-items: center;
       .ex_card_number {
-        font-size: 2rem;
+        font-size: 1.6rem;
         font-weight: 700;
         color: #0010a3;
       }
       .ex_card_text {
+        font-size: 0.7rem;
         color: #4d4d4d;
       }
     }
@@ -91,19 +94,25 @@
       .details_container {
         .i_am {
           font-size: 0.9rem;
+          margin-bottom: 12px;
         }
         .name {
           font-size: 1.6rem;
-          // margin-bottom: px;
+          margin-bottom: 15px;
         }
         .title {
           font-size: 1.1rem;
+          margin-bottom: 20px;
         }
         .paragraph {
           font-size: 0.85rem;
-          // margin-bottom: 20px;
         }
       }
+    }
+    .experience_section {
+      width: 100%;
+      padding: 50px 0;
+      border-radius: 0;
     }
   }
 }
@@ -116,9 +125,7 @@
           font-size: 1rem;
           font-weight: 400;
         }
-        .name {
-          margin-bottom: 12px;
-        }
+
         .title {
           font-size: 1.3rem;
           font-weight: 400;
@@ -126,7 +133,6 @@
         .paragraph {
           font-size: 0.9rem;
           width: 90%;
-          // margin-bottom: 25px;
         }
       }
       .button {
@@ -140,14 +146,17 @@
 @media screen and (min-width: 600px) {
   .main {
     .cover_container {
+      min-height: 70vh;
       .details_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .i_am {
           font-size: 1rem;
           margin-bottom: 15px;
         }
         .name {
           font-size: 1.75rem;
-          margin-bottom: 13px;
         }
         .title {
           font-weight: 500;
@@ -155,7 +164,6 @@
         .paragraph {
           font-size: 1.01rem;
           width: 85%;
-          // margin-bottom: 25px;
         }
       }
       .button {
@@ -166,43 +174,115 @@
     }
   }
 }
+
+@media screen and (min-width: 767px) {
+  .main {
+    .cover_container {
+      display: flex;
+      flex-direction: row;
+      .details_container {
+        .i_am {
+          margin-top: 0;
+          font-size: 0.9rem;
+          margin-bottom: 0px;
+        }
+        .name {
+          font-weight: 500;
+          font-size: 2rem;
+          margin-bottom: 10px;
+        }
+        .title {
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+        }
+        .paragraph {
+          font-size: 0.8rem;
+          line-height: 1.2rem;
+        }
+        .button {
+          font-weight: 400;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          margin-bottom: 20px;
+        }
+      }
+      .image_container_bg {
+        background: url("/images/background/desktopCeoBg.png");
+
+        background-size: 100% 100%;
+        max-height: none;
+        min-height: 430px;
+        max-width: 300px;
+        width: 100%;
+        margin: auto;
+        justify-content: flex-end;
+        .ceo_img {
+          padding-top: 20px;
+          max-height: none;
+          border-radius: 48%;
+          margin-left: 10px;
+          min-height: 320px;
+          max-height: 340px;
+        }
+      }
+    }
+    .experience_section {
+      margin: auto;
+      flex-direction: row;
+      width: 90%;
+      height: 100px;
+      padding: 50px;
+      border-radius: 4px;
+    }
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .main {
     .cover_container {
-      height: 90vh;
-
-      .header_container {
-        .header_div {
-          justify-content: center;
-          .intro_paragraph {
-            font-size: 25px;
-            margin-bottom: 20px;
-          }
-          .header {
-            font-size: 55px;
-            font-weight: 400;
-          }
-          .sub {
-            margin-top: 20px;
-            margin-bottom: 30px;
-            font-size: 20px;
-          }
-          .button_container {
-            .button {
-              border-radius: 3px;
-              font-size: 18px;
-              padding: 10px;
-              min-width: 140px;
-            }
-            .button_lorem {
-              margin-right: 25px;
-            }
-          }
+      width: 80%;
+      max-width: 1500px;
+      margin: auto;
+      .details_container {
+        .i_am {
+          margin-top: 0;
+          font-size: 1.5rem;
+          margin-bottom: 0px;
+        }
+        .name {
+          font-weight: 600;
+          font-size: 2.8rem;
+        }
+        .title {
+          font-size: 2.2rem;
+        }
+        .paragraph {
+          font-size: 1rem;
+          width: 95%;
+          max-width: 800px;
+          line-height: 1.5rem;
+        }
+        .button {
+          font-size: 1.2rem;
         }
       }
-      .image_container {
-        width: 65%;
-        justify-content: flex-end;
+    }
+    .experience_section {
+      max-width: 1400px;
+      margin: auto;
+      flex-direction: row;
+      width: 80%;
+      height: 100px;
+      padding-left: 100px;
+      padding-right: 100px;
+      border-radius: 4px;
+      .ex_card {
+        .ex_card_number {
+          font-size: 2rem;
+        }
+        .ex_card_text {
+          font-size: 0.85rem;
+        }
       }
     }
   }
