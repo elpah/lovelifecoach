@@ -1,108 +1,242 @@
 .container {
-  .about_me_header {
-    width: 90%;
-    margin: auto;
-    margin-top: 30px;
-    font-size: 28px;
-    margin-bottom: 10px;
+  margin-top: 200px;
+  width: 90%;
+  margin: auto;
+  .about_container {
+    margin-bottom: 25px;
+    .header_container {
+      position: relative;
+      margin-bottom: 15px;
+      .header_shadow {
+        font-style: italic;
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: rgba(0, 16, 163, 0.1);
+      }
+      .name {
+        position: absolute;
+        bottom: -2px;
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+    }
+    .text {
+      color: #4d4d4d;
+      font-size: 0.85rem;
+      font-weight: 300;
+      margin-bottom: 25px;
+    }
+    .button {
+      font-weight: 500;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      color: #0010a3;
+      border: 1px solid #0010a3;
+      padding: 10px 20px;
+    }
   }
-  .about_section_container {
+  .ex_container {
+    width: 90%;
+    max-width: 300px;
+    min-height: 250px;
+    max-height: 300px;
+    margin: auto;
+    background-color: #0010a3;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    width: 90%;
-    margin: auto;
-    margin-top: 50px;
-
-    .about_text_container {
-      .about_header {
-        font-size: 25px;
-        margin-bottom: 20px;
-      }
-      .about_text {
-        font-size: 15px;
-        margin-bottom: 15px;
-      }
-      .signature {
-        font-size: 18px;
-        margin-bottom: 15px;
-      }
-    }
-
-    .about_image_container {
-      margin-bottom: 30px;
-      max-width: 500px;
-      height: 400px;
-      margin: auto;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+    .ex_number {
+      color: #fff;
       margin-bottom: 20px;
-
-      .about_image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 8px;
-      }
+      font-size: 55vw;
+      font-weight: 900;
     }
-
-    // .about_image_container {
-    //   .about_image {
-    //     border-radius: 8px;
-    //     max-width: 500px;
-    //     height: 400px;
-    //   }
-    // }
+    .ex_text {
+      color: #d8d8d8;
+      margin-top: -60px;
+    }
   }
 }
+@media screen and (min-width: 400px) {
+  .container {
+    .about_container {
+      .header_container {
+        .header_shadow {
+          font-size: 2.8rem;
+        }
+        .name {
+          bottom: -7px;
+          font-size: 2rem;
+        }
+      }
+      .text {
+        font-size: 0.9rem;
+      }
+    }
+    .ex_container {
+      .ex_number {
+        color: #fff;
+        margin-bottom: -5px;
+        font-size: 14.5rem;
+      }
+      .ex_text {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px) {
+  .container {
+    .about_container {
+      .header_container {
+        .header_shadow {
+          font-size: 3rem;
+        }
+        .name {
+          bottom: -10px;
+          font-size: 2.3rem;
+        }
+      }
+      .text {
+        font-size: 1rem;
+      }
+      .button {
+        font-size: 1rem;
+      }
+    }
+    .ex_container {
+      .ex_number {
+        color: #fff;
+        margin-bottom: -5px;
+        font-size: 14.5rem;
+      }
+      .ex_text {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
-    .about_section_container {
-      flex-direction: row;
-      width: 90%;
-      max-width: 1000px;
-
-      .about_text_container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 50%;
-        .about_header {
-          font-size: 28px;
+    display: flex;
+    flex-direction: row;
+    .about_container {
+      .header_container {
+        .header_shadow {
+          font-size: 2.7rem;
         }
-        .about_text {
-        }
-        .signature {
-          font-size: 20px;
+        .name {
+          bottom: -10px;
+          font-size: 2.2rem;
         }
       }
-      .about_image_container {
-        padding-left: 20px;
-
-        .about_image {
-          border-radius: 8px;
-        }
+      .text {
+        font-size: 0.9rem;
+        width: 90%;
+      }
+      .button {
+        font-size: 1rem;
+      }
+    }
+    .ex_container {
+      width: 280px;
+      height: 650px;
+      .ex_number {
+        color: #fff;
+        margin-bottom: 18px;
+        font-size: 12rem;
+      }
+      .ex_text {
+        padding-bottom: 10px;
       }
     }
   }
 }
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 1024px) {
   .container {
-    .about_section_container {
-      width: 80%;
-      max-width: none;
-      .about_text_container {
-        .about_header {
-          font-size: 32px;
+    width: 80%;
+
+    .about_container {
+      .header_container {
+        .header_shadow {
+          font-size: 5rem;
+          margin-bottom: 30px;
         }
-        .about_text {
-          font-size: 16px;
-        }
-        .signature {
-          font-size: 24px;
+        .name {
+          bottom: -18px;
+          font-size: 3.8rem;
+          font-weight: 800;
         }
       }
-      .about_image_container {
-        padding-left: 40px;
+      .text {
+        font-size: 1.1rem;
+        width: 90%;
+      }
+      .button {
+        font-size: 1.1rem;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+    .ex_container {
+      width: 280px;
+      max-height: none;
+      height: 350px;
+
+      .ex_number {
+        color: #fff;
+        margin-bottom: 18px;
+        font-size: 12rem;
+      }
+      .ex_text {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1500px;
+
+    .about_container {
+      .header_container {
+        .header_shadow {
+          font-size: 6.5rem;
+          margin-bottom: 30px;
+        }
+        .name {
+          bottom: -18px;
+          font-size: 4.5rem;
+          font-weight: 800;
+        }
+      }
+      .text {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+      }
+      .button {
+        font-size: 1.7rem;
+      }
+    }
+    .ex_container {
+      max-width: none;
+      width: 350px;
+      max-height: none;
+      height: 380px;
+
+      .ex_number {
+        color: #fff;
+        margin-bottom: 18px;
+        font-size: 12rem;
+      }
+      .ex_text {
+        font-size: 1.1rem;
+        padding-bottom: 10px;
       }
     }
   }

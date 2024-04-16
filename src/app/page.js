@@ -8,6 +8,7 @@ export default function page() {
     <>
       <Navbar />
       <HomePage />
+      <AboutMe />
       {/* 
       <Services />
       <AboutMe />
