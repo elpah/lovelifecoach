@@ -2,12 +2,14 @@
   margin-top: 200px;
   width: 90%;
   margin: auto;
+  margin-bottom: 40px;
   .about_container {
     margin-bottom: 25px;
     .header_container {
       position: relative;
       margin-bottom: 15px;
       .header_shadow {
+        user-select: none;
         font-style: italic;
         font-size: 2.5rem;
         font-weight: 900;
@@ -163,12 +165,12 @@
     .about_container {
       .header_container {
         .header_shadow {
-          font-size: 5rem;
+          font-size: 4.3rem;
           margin-bottom: 30px;
         }
         .name {
           bottom: -18px;
-          font-size: 3.8rem;
+          font-size: 3.4rem;
           font-weight: 800;
         }
       }
@@ -183,7 +185,11 @@
       }
     }
     .ex_container {
-      width: 280px;
+      max-width: none;
+      padding-left: 12px;
+      padding-right: 12px;
+      // width: 300px;
+      // width: 30%;
       max-height: none;
       height: 350px;
 
@@ -206,27 +212,29 @@
     .about_container {
       .header_container {
         .header_shadow {
-          font-size: 6.5rem;
+          font-size: 5rem;
           margin-bottom: 30px;
         }
         .name {
           bottom: -18px;
-          font-size: 4.5rem;
+          font-size: 4rem;
           font-weight: 800;
         }
       }
       .text {
-        font-size: 1.5rem;
+        font-size: 1.37rem;
         margin-bottom: 40px;
       }
       .button {
-        font-size: 1.7rem;
+        font-size: 1.4rem;
       }
     }
     .ex_container {
       max-width: none;
-      width: 350px;
       max-height: none;
+      padding-left: 20px;
+      padding-right: 20px;
+
       height: 380px;
 
       .ex_number {
