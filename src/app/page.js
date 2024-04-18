@@ -10,10 +10,7 @@ export default function page() {
       <HomePage />
       <AboutMe />
       <Services />
-      {/* 
-      
-      <AboutMe />
-      <ContactSection /> */}
+      <ContactSection />
     </>
   );
 }
