@@ -1,7 +1,16 @@
-import Image from "next/image";
-
-export default function Home() {
+import HomePage from "@/components/home/HomePage";
+import Navbar from "@/components/navbar/Navbar";
+import AboutMe from "@/components/about/AboutMe";
+import Services from "@/components/services/Services";
+import ContactSection from "@/components/contact/ContactSection";
+export default function page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+    <>
+      <Navbar />
+      <HomePage />
+      <AboutMe />
+      <Services />
+      <ContactSection />
+    </>
   );
 }

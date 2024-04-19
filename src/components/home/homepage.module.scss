@@ -1,0 +1,336 @@
+.main {
+  margin-bottom: 60px;
+  .cover_container {
+    width: 90%;
+    margin: auto;
+    .details_container {
+      .i_am {
+        color: #000;
+        font-size: 0.8rem;
+        margin-top: 40px;
+        margin-bottom: 7px;
+      }
+      .name {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .title {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        .title_tag {
+          padding: 0.4rem 0.7rem;
+          background-color: #dbdef9;
+          border-radius: 16px;
+          font-weight: 600;
+          color: #0010a3;
+        }
+      }
+      .paragraph {
+        font-size: 0.8rem;
+        margin-bottom: 40px;
+      }
+      .button {
+        background-color: #0010a3;
+        color: #fafafa;
+        border-radius: 4px;
+        width: 180px;
+        padding: 7px;
+        margin-bottom: 20px;
+      }
+    }
+    .image_container_bg {
+      background: url("/images/background/mobileCeoBg.png");
+      background-size: 100% 100%;
+      width: 80%;
+      max-width: 380px;
+      max-height: 350px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-position: center;
+      background-repeat: no-repeat;
+      .ceo_img {
+        padding-top: 20px;
+        margin-top: 10px;
+        border-radius: 38%;
+        width: 100%;
+        max-height: 340px;
+      }
+    }
+  }
+  .experience_section {
+    border: 1px solid #c4c7e9;
+    margin-top: 40px;
+    background-color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 407px;
+    align-items: center;
+    padding: 50px 0;
+    border-radius: 16px;
+
+    .ex_card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .ex_card_number {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #0010a3;
+      }
+      .ex_card_text {
+        font-size: 0.7rem;
+        color: #4d4d4d;
+      }
+    }
+  }
+}
+@media screen and (min-width: 400px) {
+  .main {
+    .cover_container {
+      .details_container {
+        .i_am {
+          font-size: 0.9rem;
+          margin-bottom: 12px;
+        }
+        .name {
+          font-size: 1.6rem;
+          margin-bottom: 15px;
+        }
+        .title {
+          font-size: 1.1rem;
+          margin-bottom: 20px;
+        }
+        .paragraph {
+          font-size: 0.85rem;
+        }
+      }
+    }
+    .experience_section {
+      width: 100%;
+      padding: 50px 0;
+      border-radius: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .main {
+    .cover_container {
+      .details_container {
+        .i_am {
+          font-size: 1rem;
+          font-weight: 400;
+        }
+
+        .title {
+          font-size: 1.3rem;
+          font-weight: 400;
+        }
+        .paragraph {
+          font-size: 0.9rem;
+          width: 90%;
+        }
+      }
+      .button {
+        transform: scale(1.1);
+        margin-left: 8px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px) {
+  .main {
+    .cover_container {
+      min-height: 70vh;
+      .details_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .i_am {
+          font-size: 1rem;
+          margin-bottom: 15px;
+        }
+        .name {
+          font-size: 1.75rem;
+        }
+        .title {
+          font-weight: 500;
+        }
+        .paragraph {
+          font-size: 1.01rem;
+          width: 85%;
+        }
+      }
+      .button {
+        transform: scale(1.1);
+        margin-left: 8px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main {
+    .cover_container {
+      display: flex;
+      flex-direction: row;
+      .details_container {
+        .i_am {
+          margin-top: 0;
+          font-size: 0.9rem;
+          margin-bottom: 0px;
+        }
+        .name {
+          font-weight: 500;
+          font-size: 2rem;
+          margin-bottom: 10px;
+        }
+        .title {
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+        }
+        .paragraph {
+          font-size: 0.8rem;
+          line-height: 1.2rem;
+        }
+        .button {
+          font-weight: 400;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          margin-bottom: 20px;
+        }
+      }
+      .image_container_bg {
+        background: url("/images/background/desktopCeoBg.png");
+
+        background-size: 100% 100%;
+        max-height: none;
+        min-height: 430px;
+        max-width: 300px;
+        width: 100%;
+        margin: auto;
+        justify-content: flex-end;
+        .ceo_img {
+          padding-top: 20px;
+          max-height: none;
+          border-radius: 48%;
+          margin-left: 10px;
+          min-height: 320px;
+          max-height: 340px;
+        }
+      }
+    }
+    .experience_section {
+      margin: auto;
+      flex-direction: row;
+      width: 90%;
+      height: 100px;
+      padding: 50px;
+      border-radius: 4px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    .cover_container {
+      width: 80%;
+      max-width: 1500px;
+      margin: auto;
+      .details_container {
+        .i_am {
+          margin-top: 0;
+          font-size: 1.3rem;
+          margin-bottom: 0px;
+        }
+        .name {
+          font-weight: 600;
+          font-size: 3rem;
+        }
+        .title {
+          font-size: 2.2rem;
+        }
+        .paragraph {
+          font-size: 1rem;
+          width: 85%;
+          max-width: 800px;
+          line-height: 1.5rem;
+        }
+        .button {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .experience_section {
+      max-width: 1400px;
+      margin: auto;
+      flex-direction: row;
+      width: 80%;
+      height: 100px;
+      padding-left: 100px;
+      padding-right: 100px;
+      border-radius: 4px;
+      .ex_card {
+        .ex_card_number {
+          font-size: 2rem;
+        }
+        .ex_card_text {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main {
+    .cover_container {
+      .details_container {
+        .i_am {
+          margin-top: 0;
+          font-size: 1.4rem;
+          margin-bottom: -10px;
+        }
+        .name {
+          font-weight: 600;
+          font-size: 3.5rem;
+          margin-bottom: 5px;
+        }
+        .title {
+          font-size: 2.6rem;
+        }
+        .paragraph {
+          font-size: 1.4rem;
+          font-weight: 300;
+          width: 85%;
+          max-width: 800px;
+          line-height: 2rem;
+        }
+        .button {
+          font-size: 1.4rem;
+          width: 230px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+    .experience_section {
+      height: 120px;
+      .ex_card {
+        .ex_card_number {
+          font-size: 2.2rem;
+        }
+        .ex_card_text {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
