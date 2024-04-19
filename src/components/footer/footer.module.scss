@@ -1,0 +1,116 @@
+.cover {
+  background-color: rgba(0, 16, 163, 0.1);
+  .footer_container {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+
+    .logo_container {
+      width: 40px;
+      height: 40px;
+      margin: auto;
+      margin-bottom: 25px;
+    }
+    .navlist_container {
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      .list_item {
+        width: 100%;
+        text-align: center;
+        color: #4d4d4d;
+        margin-bottom: 10px;
+        cursor: pointer;
+        &:hover {
+          color: #000000;
+        }
+      }
+    }
+    .socials_container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 20%;
+      min-width: 120px;
+      max-width: 160px;
+      margin: auto;
+      margin-bottom: 20px;
+      .icon {
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    .bar {
+      width: 98%;
+      height: 1.4px;
+      margin: auto;
+      margin-bottom: 18px;
+      background-color: rgba(142, 142, 142, 0.2);
+    }
+    .copyright {
+      text-align: center;
+      color: rgba(142, 142, 142, 0.8);
+      font-size: 0.8rem;
+      font-weight: 300;
+      margin-bottom: 18px;
+    }
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .cover {
+    .footer_container {
+      flex-direction: column;
+
+      .logo_container {
+        margin-bottom: 20px;
+      }
+      .navlist_container {
+        min-width: 400px;
+        margin: auto;
+
+        justify-content: center;
+        flex-direction: row;
+        .list_item {
+          width: 100%;
+          text-align: center;
+          color: #4d4d4d;
+          margin-bottom: 25px;
+        }
+      }
+      .socials_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 20%;
+        min-width: 120px;
+        max-width: 160px;
+        margin: auto;
+        margin-bottom: 20px;
+        .icon {
+          height: 20px;
+          width: 20px;
+        }
+      }
+      .bar {
+        width: 98%;
+        height: 1.4px;
+        margin: auto;
+        margin-bottom: 18px;
+        background-color: rgba(142, 142, 142, 0.2);
+      }
+      .copyright {
+        text-align: center;
+        color: rgba(142, 142, 142, 0.8);
+        font-size: 0.8rem;
+        font-weight: 300;
+        margin-bottom: 18px;
+      }
+    }
+  }
+}
