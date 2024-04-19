@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styles from "./homepage.module.scss";
 
-export default function HomePage() {
+export default function HomePage(id) {
   return (
-    <main className={styles.main}>
+    <main id={id} className={styles.main}>
       <section className={styles.cover_container}>
         <div className={styles.details_container}>
           <p className={styles.i_am}>I AM</p>

@@ -2,7 +2,7 @@ import styles from "./services.module.scss";
 import ServiceCard from "@/components/service-card/ServiceCard";
 import { FaCheck, FaQuestion } from "react-icons/fa";
 
-export default function Services() {
+export default function Services({ id }) {
   const services = [
     {
       serviceName: "Individual and Group Counselling",
@@ -26,7 +26,7 @@ export default function Services() {
     },
   ];
   return (
-    <div className={styles.main_container}>
+    <div id={id} className={styles.main_container}>
       <div className={styles.container}>
         <div className={styles.header_container}>
           <h2 className={styles.header_shadow}>MY SERVICES</h2>

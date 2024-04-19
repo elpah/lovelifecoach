@@ -2,9 +2,9 @@
 import { FaPhone, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import styles from "./contact.module.scss";
 
-export default function ContactSection() {
+export default function ContactSection({ id }) {
   return (
-    <div className={styles.container}>
+    <div id={id} className={styles.container}>
       <h2 className={styles.header}>CONTACT ME</h2>
       <p className={styles.credentials}>
         Health Psychologist | Counsellor | Lovelife Coach | Therapist

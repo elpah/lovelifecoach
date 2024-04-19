@@ -1,7 +1,7 @@
 import styles from "./aboutme.module.scss";
-export default function AboutMe() {
+export default function AboutMe({ id }) {
   return (
-    <div className={styles.container}>
+    <div id={id} className={styles.container}>
       <div className={styles.about_container}>
         <div className={styles.header_container}>
           <h2 className={styles.header_shadow}>ABOUT ME</h2>

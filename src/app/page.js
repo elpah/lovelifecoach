@@ -5,13 +5,19 @@ import Services from "@/components/services/Services";
 import ContactSection from "@/components/contact/ContactSection";
 import Footer from "@/components/footer/Footer";
 export default function page() {
+  const sections = [
+    { id: "home", title: "Home" },
+    { id: "about", title: "About" },
+    { id: "services", title: "Services" },
+    { id: "contact", title: "Contact" },
+  ];
   return (
     <>
-      <Navbar />
-      <HomePage />
-      <AboutMe />
-      <Services />
-      <ContactSection />
+      <Navbar sections={sections} />
+      <HomePage id="home" />
+      <AboutMe id="about" />
+      <Services id="services" />
+      <ContactSection id="contact" />
       <Footer />
     </>
   );
