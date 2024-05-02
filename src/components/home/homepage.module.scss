@@ -1,5 +1,6 @@
 .main {
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
+  margin-top: 100px;
   .cover_container {
     width: 90%;
     margin: auto;
@@ -7,8 +8,8 @@
       .i_am {
         color: #000;
         font-size: 0.8rem;
-        margin-top: 40px;
-        margin-bottom: 7px;
+        // margin-top: 40px;
+        margin-bottom: 0px;
       }
       .name {
         font-size: 1.5rem;
@@ -17,6 +18,7 @@
       }
       .title {
         font-size: 1rem;
+        margin-top: 10px;
         margin-bottom: 15px;
         .title_tag {
           padding: 0.4rem 0.7rem;
@@ -24,14 +26,22 @@
           border-radius: 16px;
           font-weight: 600;
           color: #0010a3;
+
+          .blinking_cursor {
+            margin-left: 3px;
+            border-left: 2.5px solid #0010a3;
+
+            animation: blinkCursor 1s infinite steps(2);
+          }
         }
       }
       .paragraph {
-        font-size: 0.8rem;
-        margin-bottom: 40px;
+        font-size: 0.75rem;
+        margin-bottom: 30px;
+        line-height: 1.1rem;
       }
       .button {
-        background-color: #0010a3;
+        background-color: #000d85;
         color: #fafafa;
         border-radius: 4px;
         width: 180px;
@@ -95,11 +105,11 @@
       .details_container {
         .i_am {
           font-size: 0.9rem;
-          margin-bottom: 12px;
+          margin-bottom: 0px;
         }
         .name {
           font-size: 1.6rem;
-          margin-bottom: 15px;
+          margin-bottom: 5px;
         }
         .title {
           font-size: 1.1rem;
@@ -107,6 +117,7 @@
         }
         .paragraph {
           font-size: 0.85rem;
+          line-height: 1.3rem;
         }
       }
     }
@@ -154,7 +165,7 @@
         justify-content: center;
         .i_am {
           font-size: 1rem;
-          margin-bottom: 15px;
+          // margin-bottom: 0px;
         }
         .name {
           font-size: 1.75rem;
@@ -163,7 +174,7 @@
           font-weight: 500;
         }
         .paragraph {
-          font-size: 1.01rem;
+          font-size: 1rem;
           width: 85%;
         }
       }
@@ -184,27 +195,39 @@
       .details_container {
         .i_am {
           margin-top: 0;
-          font-size: 0.9rem;
+          font-size: 1rem;
           margin-bottom: 0px;
         }
         .name {
           font-weight: 500;
-          font-size: 2rem;
-          margin-bottom: 10px;
+          font-size: 2.2rem;
+          // margin-bottom: 10px;
         }
         .title {
-          font-size: 1.5rem;
+          font-size: 1.7rem;
           margin-bottom: 20px;
+          .title_tag {
+            .blinking_cursor {
+              margin-left: 7px;
+              border-left: 4px solid #0010a3;
+            }
+          }
         }
         .paragraph {
-          font-size: 0.8rem;
-          line-height: 1.2rem;
+          font-size: 0.9rem;
+          line-height: 1.3rem;
         }
         .button {
           font-weight: 400;
           border-radius: 4px;
           font-size: 0.9rem;
           margin-bottom: 20px;
+          transition: all 0.3s ease;
+          &:hover {
+            background-color: #1524a3;
+            color: white;
+            transform: scale(1.15);
+          }
         }
       }
       .image_container_bg {
@@ -247,12 +270,13 @@
       .details_container {
         .i_am {
           margin-top: 0;
-          font-size: 1.3rem;
+          font-size: 1.2rem;
           margin-bottom: 0px;
+          font-weight: 500;
         }
         .name {
           font-weight: 600;
-          font-size: 3rem;
+          font-size: 2.8rem;
         }
         .title {
           font-size: 2.2rem;
@@ -289,6 +313,18 @@
   }
 }
 
+@media screen and (min-width: 1300px) {
+  .main {
+    .cover_container {
+      .details_container {
+        .paragraph {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .main {
     .cover_container {
@@ -296,28 +332,31 @@
         .i_am {
           margin-top: 0;
           font-size: 1.4rem;
-          margin-bottom: -10px;
+          margin-bottom: 5px;
         }
         .name {
           font-weight: 600;
-          font-size: 3.5rem;
-          margin-bottom: 5px;
+          font-size: 3.3rem;
+          margin-bottom: 0px;
         }
         .title {
-          font-size: 2.6rem;
+          margin-bottom: 25px;
+          font-size: 2.4rem;
+          .blinking-cursor {
+          }
         }
         .paragraph {
-          font-size: 1.4rem;
+          font-size: 1.3rem;
           font-weight: 300;
           width: 85%;
           max-width: 800px;
-          line-height: 2rem;
+          line-height: 1.6rem;
         }
         .button {
-          font-size: 1.4rem;
-          width: 230px;
-          padding-top: 10px;
-          padding-bottom: 10px;
+          font-size: 1.3rem;
+          width: 220px;
+          padding-top: 8px;
+          padding-bottom: 8px;
         }
       }
     }
@@ -332,5 +371,16 @@
         }
       }
     }
+  }
+}
+
+@keyframes blinkCursor {
+  0%,
+  49.9% {
+    visibility: visible;
+  }
+  50%,
+  100% {
+    visibility: hidden;
   }
 }

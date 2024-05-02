@@ -1,22 +1,44 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
-import localFont from "next/font/local";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { useState, useEffect, useRef } from "react";
 import styles from "./navbar.module.scss";
 
-const scrollToSection = (id) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-};
-export default function Navbar() {
+export default function Navbar({ sections }) {
   const [isOpen, setIsOpen] = useState(false);
+  const navbarRef = useRef(null);
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    const navbarHeight = navbarRef.current.offsetHeight;
+
+    if (section) {
+      const offset = section.offsetTop - navbarHeight;
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const navbarHeight = navbarRef.current.offsetHeight;
+      document.documentElement.style.setProperty(
+        "--navbar-height",
+        `${navbarHeight}px`
+      );
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <header className={styles.container}>
-      <nav className={styles.nav_container}>
+      <nav ref={navbarRef} className={styles.nav_container}>
         <div className={styles.logo_container}>
           <img
             className={styles.logo}
@@ -26,10 +48,15 @@ export default function Navbar() {
         </div>
 
         <ul className={styles.navlink_container}>
-          <li className={styles.navlink}>Home</li>
-          <li className={styles.navlink}>About</li>
-          <li className={styles.navlink}>Services</li>
-          <li className={styles.navlink}>Contact</li>
+          {sections.map((section) => (
+            <li
+              key={section.id}
+              onClick={() => scrollToSection(section.id)}
+              className={styles.navlink}
+            >
+              {section.title}
+            </li>
+          ))}
         </ul>
         <div className={styles.button_container}>
           <button className={styles.button}>Book Appointment</button>
@@ -52,11 +79,18 @@ export default function Navbar() {
 
       {isOpen && (
         <ul className={styles.mobile_nav_container}>
-          <li className={styles.mobile_navlink}>Home</li>
-          <li className={styles.mobile_navlink}>About</li>
-          <li className={styles.mobile_navlink}>Services</li>
-          <li className={styles.mobile_navlink}>Contact</li>
-
+          {sections.map((section) => (
+            <li
+              key={section.id}
+              className={styles.mobile_navlink}
+              onClick={() => {
+                setIsOpen(!isOpen);
+                scrollToSection(section.id);
+              }}
+            >
+              {section.title}
+            </li>
+          ))}
           <div className={styles.mobilebutton_container}>
             <button className={styles.mobile_button}>Book Appointment</button>
           </div>

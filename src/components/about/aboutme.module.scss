@@ -1,7 +1,8 @@
 .container {
-  margin-top: 200px;
   width: 90%;
   margin: auto;
+  margin-top: 80px;
+
   margin-bottom: 40px;
   .about_container {
     margin-bottom: 25px;
@@ -124,6 +125,7 @@
 
 @media screen and (min-width: 768px) {
   .container {
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     .about_container {
@@ -142,6 +144,12 @@
       }
       .button {
         font-size: 1rem;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: #1524a3;
+          color: #fff;
+          transform: scale(1.05);
+        }
       }
     }
     .ex_container {
@@ -161,6 +169,7 @@
 @media screen and (min-width: 1024px) {
   .container {
     width: 80%;
+    margin-top: 100px;
 
     .about_container {
       .header_container {
