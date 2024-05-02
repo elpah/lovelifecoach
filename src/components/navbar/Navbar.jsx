@@ -1,21 +1,44 @@
 "use client";
-import { useState } from "react";
-// import Link from "next/link";
+import { useState, useEffect, useRef } from "react";
 import styles from "./navbar.module.scss";
 
 export default function Navbar({ sections }) {
   const [isOpen, setIsOpen] = useState(false);
+  const navbarRef = useRef(null);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
+    const navbarHeight = navbarRef.current.offsetHeight;
+
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const offset = section.offsetTop - navbarHeight;
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth",
+      });
     }
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      const navbarHeight = navbarRef.current.offsetHeight;
+      document.documentElement.style.setProperty(
+        "--navbar-height",
+        `${navbarHeight}px`
+      );
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <header className={styles.container}>
-      <nav className={styles.nav_container}>
+      <nav ref={navbarRef} className={styles.nav_container}>
         <div className={styles.logo_container}>
           <img
             className={styles.logo}
@@ -57,7 +80,14 @@ export default function Navbar({ sections }) {
       {isOpen && (
         <ul className={styles.mobile_nav_container}>
           {sections.map((section) => (
-            <li key={section.id} className={styles.mobile_navlink}>
+            <li
+              key={section.id}
+              className={styles.mobile_navlink}
+              onClick={() => {
+                setIsOpen(!isOpen);
+                scrollToSection(section.id);
+              }}
+            >
               {section.title}
             </li>
           ))}

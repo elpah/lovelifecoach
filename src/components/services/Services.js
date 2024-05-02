@@ -2,7 +2,7 @@ import styles from "./services.module.scss";
 import ServiceCard from "@/components/service-card/ServiceCard";
 import { FaCheck, FaQuestion } from "react-icons/fa";
 
-export default function Services({ id }) {
+export default function Services() {
   const services = [
     {
       serviceName: "Individual and Group Counselling",
@@ -26,11 +26,11 @@ export default function Services({ id }) {
     },
   ];
   return (
-    <div id={id} className={styles.main_container}>
+    <div id="services" className={styles.main_container}>
       <div className={styles.container}>
         <div className={styles.header_container}>
-          <h2 className={styles.header_shadow}>MY SERVICES</h2>
-          <h3 className={styles.name}>WHAT I DO</h3>
+          <h2 className={styles.header_shadow}>SERVICES</h2>
+          <h3 className={styles.name}>SERVICES</h3>
         </div>
         <p className={styles.services_paragraph}>
           Explore the significance of counselling in promoting mental health,
@@ -38,6 +38,10 @@ export default function Services({ id }) {
           heal past hurts and equips you with the tools to build fulfilling,
           lasting relationships
         </p>
+        {/* //Individual Counselling 
+        group coinselling
+         carrear coaching conference
+        speaking and Facilitating */}
         <div className={styles.services_container}>
           <ServiceCard />
           <ServiceCard />

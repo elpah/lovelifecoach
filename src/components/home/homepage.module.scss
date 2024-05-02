@@ -1,5 +1,6 @@
 .main {
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
+  margin-top: 100px;
   .cover_container {
     width: 90%;
     margin: auto;
@@ -7,7 +8,7 @@
       .i_am {
         color: #000;
         font-size: 0.8rem;
-        margin-top: 40px;
+        // margin-top: 40px;
         margin-bottom: 0px;
       }
       .name {
@@ -17,6 +18,7 @@
       }
       .title {
         font-size: 1rem;
+        margin-top: 10px;
         margin-bottom: 15px;
         .title_tag {
           padding: 0.4rem 0.7rem;
@@ -24,6 +26,13 @@
           border-radius: 16px;
           font-weight: 600;
           color: #0010a3;
+
+          .blinking_cursor {
+            margin-left: 3px;
+            border-left: 2.5px solid #0010a3;
+
+            animation: blinkCursor 1s infinite steps(2);
+          }
         }
       }
       .paragraph {
@@ -100,7 +109,7 @@
         }
         .name {
           font-size: 1.6rem;
-          margin-bottom: 15px;
+          margin-bottom: 5px;
         }
         .title {
           font-size: 1.1rem;
@@ -192,11 +201,17 @@
         .name {
           font-weight: 500;
           font-size: 2.2rem;
-          margin-bottom: 10px;
+          // margin-bottom: 10px;
         }
         .title {
           font-size: 1.7rem;
           margin-bottom: 20px;
+          .title_tag {
+            .blinking_cursor {
+              margin-left: 7px;
+              border-left: 4px solid #0010a3;
+            }
+          }
         }
         .paragraph {
           font-size: 0.9rem;
@@ -322,10 +337,13 @@
         .name {
           font-weight: 600;
           font-size: 3.3rem;
-          margin-bottom: 10px;
+          margin-bottom: 0px;
         }
         .title {
+          margin-bottom: 25px;
           font-size: 2.4rem;
+          .blinking-cursor {
+          }
         }
         .paragraph {
           font-size: 1.3rem;
@@ -353,5 +371,16 @@
         }
       }
     }
+  }
+}
+
+@keyframes blinkCursor {
+  0%,
+  49.9% {
+    visibility: visible;
+  }
+  50%,
+  100% {
+    visibility: hidden;
   }
 }

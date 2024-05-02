@@ -14,10 +14,10 @@ export default function page() {
   return (
     <>
       <Navbar sections={sections} />
-      <HomePage id="home" />
-      <AboutMe id="about" />
-      <Services id="services" />
-      <ContactSection id="contact" />
+      <HomePage />
+      <AboutMe />
+      <Services />
+      <ContactSection />
       <Footer />
     </>
   );

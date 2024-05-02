@@ -1,7 +1,7 @@
 import styles from "./aboutme.module.scss";
-export default function AboutMe({ id }) {
+export default function AboutMe() {
   return (
-    <div id={id} className={styles.container}>
+    <div id="about" className={styles.container}>
       <div className={styles.about_container}>
         <div className={styles.header_container}>
           <h2 className={styles.header_shadow}>ABOUT ME</h2>
@@ -19,7 +19,7 @@ export default function AboutMe({ id }) {
           <br />
           Contact Bless Kofi today and start your journey towards lasting love.
         </p>
-        <button className={styles.button}>Download CV</button>
+        <button className={styles.button}>LINKEDIN</button>
       </div>
       <div className={styles.ex_container}>
         <h2 className={styles.ex_number}>05</h2>
