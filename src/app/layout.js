@@ -5,8 +5,8 @@ import Navbar from "@/components/navbar/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Flickr Image Viewer",
-  description: "Miyagami Task",
+  title: "BKA- Love Life Coach",
+  description: "Bless Kofi Asiedu",
 };
 
 export default function RootLayout({ children }) {

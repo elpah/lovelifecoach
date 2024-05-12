@@ -5,24 +5,29 @@ import { FaCheck, FaQuestion } from "react-icons/fa";
 export default function Services() {
   const services = [
     {
-      serviceName: "Individual and Group Counselling",
-      serviceImage:
-        "https://media.istockphoto.com/id/961556200/photo/smiling-african-american-psychiatrist-talking-to-young-couple.jpg?s=612x612&w=0&k=20&c=-rdM2vWMyJzOz_iG88iu1lpBkmobihfr8iRZXc3iXB4=",
+      serviceName: "Individual Counselling",
+      serviceImage: "/images/services/individual.png",
+      serviceIcon: "/images/services/individual-icon.png",
     },
     {
-      serviceName: "Relationship Counselling",
-      serviceImage:
-        "https://media.istockphoto.com/id/961556200/photo/smiling-african-american-psychiatrist-talking-to-young-couple.jpg?s=612x612&w=0&k=20&c=-rdM2vWMyJzOz_iG88iu1lpBkmobihfr8iRZXc3iXB4=",
+      serviceName: "Group Counselling",
+      serviceImage: "/images/services/group.png",
+      serviceIcon: "/images/services/group-icon.png",
     },
     {
-      serviceName: "Career Guidance and counselling",
-      serviceImage:
-        "https://media.istockphoto.com/id/961556200/photo/smiling-african-american-psychiatrist-talking-to-young-couple.jpg?s=612x612&w=0&k=20&c=-rdM2vWMyJzOz_iG88iu1lpBkmobihfr8iRZXc3iXB4=",
+      serviceName: "Career Coaching",
+      serviceImage: "/images/services/career.png",
+      serviceIcon: "/images/services/career-icon.png",
     },
     {
-      serviceName: "Pre-marital Counselling",
-      serviceImage:
-        "https://media.istockphoto.com/id/961556200/photo/smiling-african-american-psychiatrist-talking-to-young-couple.jpg?s=612x612&w=0&k=20&c=-rdM2vWMyJzOz_iG88iu1lpBkmobihfr8iRZXc3iXB4=",
+      serviceName: "Conference Speaking",
+      serviceImage: "/images/services/conference.png",
+      serviceIcon: "/images/services/career-icon.png",
+    },
+    {
+      serviceName: "Facilitating",
+      serviceImage: "/images/services/facilitating.png",
+      serviceIcon: "/images/services/career-icon.png",
     },
   ];
   return (
@@ -38,15 +43,16 @@ export default function Services() {
           heal past hurts and equips you with the tools to build fulfilling,
           lasting relationships
         </p>
-        {/* //Individual Counselling 
-        group coinselling
-         carrear coaching conference
-        speaking and Facilitating */}
+
         <div className={styles.services_container}>
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
-          <ServiceCard />
+          {services.map((service, index) => (
+            <ServiceCard
+              key={index}
+              cardName={service.serviceName}
+              cardImage={service.serviceImage}
+              cardIcon={service.serviceIcon}
+            />
+          ))}
         </div>
       </div>
     </div>

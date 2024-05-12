@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./aboutme.module.scss";
 export default function AboutMe() {
   return (
@@ -19,7 +20,12 @@ export default function AboutMe() {
           <br />
           Contact Bless Kofi today and start your journey towards lasting love.
         </p>
-        <button className={styles.button}>LINKEDIN</button>
+        <Link
+          href="https://www.linkedin.com/in/bless-kofi-asiedu-ba-pgde-mphil-b16240b5/"
+          target="blank"
+        >
+          <button className={styles.button}>LINKEDIN</button>
+        </Link>
       </div>
       <div className={styles.ex_container}>
         <h2 className={styles.ex_number}>05</h2>
