@@ -18,7 +18,7 @@ export default function page() {
       <AboutMe />
       <Services />
       <ContactSection />
-      <Footer />
+      <Footer sections={sections} />
     </>
   );
 }
