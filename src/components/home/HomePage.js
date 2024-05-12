@@ -1,13 +1,17 @@
 "use client";
-import Image from "next/image";
 import styles from "./homepage.module.scss";
 import { Typewriter } from "nextjs-simple-typewriter";
 import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function HomePage() {
   const [experience, setExperience] = useState(0);
   const [client, setClient] = useState(0);
   const [awards, setAwards] = useState(0);
+
+  const { ref, inView } = useInView();
+  const animation = useAnimation();
 
   useEffect(() => {
     const experienceIntervalId = setInterval(() => {
@@ -44,6 +48,23 @@ export default function HomePage() {
       clearInterval(awardsIntervalId);
     };
   }, [awards]);
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1,
+        x: 0,
+        transition: { duration: 1 },
+      });
+    }
+    if (!inView) {
+      animation.start({
+        opacity: 0,
+        x: -100,
+        transition: { duration: 1 },
+      });
+    }
+  }, [animation, inView]);
 
   return (
     <main id="home" className={styles.main}>
