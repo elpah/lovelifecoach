@@ -2,16 +2,14 @@
 import styles from "./homepage.module.scss";
 import { Typewriter } from "nextjs-simple-typewriter";
 import { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export default function HomePage() {
   const [experience, setExperience] = useState(0);
   const [client, setClient] = useState(0);
   const [awards, setAwards] = useState(0);
-
   const { ref, inView } = useInView();
-  const animation = useAnimation();
 
   useEffect(() => {
     const experienceIntervalId = setInterval(() => {
@@ -49,30 +47,34 @@ export default function HomePage() {
     };
   }, [awards]);
 
-  useEffect(() => {
-    if (inView) {
-      animation.start({
-        opacity: 1,
-        x: 0,
-        transition: { duration: 1 },
-      });
-    }
-    if (!inView) {
-      animation.start({
-        opacity: 0,
-        x: -100,
-        transition: { duration: 1 },
-      });
-    }
-  }, [animation, inView]);
-
   return (
     <main id="home" className={styles.main}>
       <section className={styles.cover_container}>
         <div className={styles.details_container}>
-          <p className={styles.i_am}>I AM</p>
-          <h2 className={styles.name}>BLESS KOFI ASIEDU</h2>
-          <h3 className={styles.title}>
+          <motion.p
+            ref={ref}
+            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
+            className={styles.i_am}
+          >
+            I AM
+          </motion.p>
+          <motion.h2
+            ref={ref}
+            initial={{ opacity: 0, x: -100 }}
+            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            transition={{ duration: 1 }}
+            className={styles.name}
+          >
+            BLESS KOFI ASIEDU
+          </motion.h2>
+          <motion.h3
+            initial={{ opacity: 0, x: -100 }}
+            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            transition={{ duration: 1 }}
+            className={styles.title}
+          >
             A{" "}
             <span className={styles.title_tag}>
               <Typewriter
@@ -91,16 +93,34 @@ export default function HomePage() {
               />
               <span className={styles.blinking_cursor}></span>
             </span>
-          </h3>
-          <p className={styles.paragraph}>
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, x: -100 }}
+            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            transition={{ duration: 1 }}
+            className={styles.paragraph}
+          >
             Direction is what you need when you are lost and NOT SPEED! The cost
             involved in dealing with the issues of life have to be prioritized
             and confronted.
-          </p>
-          <button className={styles.button}>Book Appointment</button>
+          </motion.p>
+          <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className={styles.button}
+          >
+            Book Appointment
+          </motion.button>
         </div>
         <div className={styles.image_container_bg}>
-          <img className={styles.ceo_img} src="/images/ceo/bka.png" />
+          <motion.img
+            initial={{ opacity: 0, y: 70 }}
+            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            transition={{ duration: 1 }}
+            className={styles.ceo_img}
+            src="/images/ceo/bka.png"
+          />
         </div>
       </section>
       <section className={styles.experience_section}>

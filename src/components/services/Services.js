@@ -1,8 +1,11 @@
+"use client";
 import styles from "./services.module.scss";
 import ServiceCard from "@/components/service-card/ServiceCard";
-import { FaCheck, FaQuestion } from "react-icons/fa";
-
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 export default function Services() {
+  const { ref, inView } = useInView();
+
   const services = [
     {
       serviceName: "Individual Counselling",
@@ -22,20 +25,36 @@ export default function Services() {
     {
       serviceName: "Conference Speaking",
       serviceImage: "/images/services/conference.png",
-      serviceIcon: "/images/services/career-icon.png",
+      serviceIcon: "/images/services/conference-icon.png",
     },
     {
       serviceName: "Facilitating",
       serviceImage: "/images/services/facilitating.png",
-      serviceIcon: "/images/services/career-icon.png",
+      serviceIcon: "/images/services/facilitating-icon.png",
     },
   ];
   return (
     <div id="services" className={styles.main_container}>
       <div className={styles.container}>
         <div className={styles.header_container}>
-          <h2 className={styles.header_shadow}>SERVICES</h2>
-          <h3 className={styles.name}>SERVICES</h3>
+          <motion.h2
+            ref={ref}
+            initial={{ opacity: 0, x: -100 }}
+            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            transition={{ duration: 1 }}
+            className={styles.header_shadow}
+          >
+            SERVICES
+          </motion.h2>
+          <motion.h3
+            ref={ref}
+            initial={{ opacity: 0, x: 50 }}
+            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            transition={{ duration: 1 }}
+            className={styles.name}
+          >
+            SERVICES
+          </motion.h3>
         </div>
         <p className={styles.services_paragraph}>
           Explore the significance of counselling in promoting mental health,
