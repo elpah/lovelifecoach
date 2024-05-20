@@ -15,10 +15,9 @@ export default function page() {
     <>
       <Navbar sections={sections} />
       <HomePage />
-      {/*
       <AboutMe />
       <Services />
-      <ContactSection /> */}
+      <ContactSection />
       <Footer sections={sections} />
     </>
   );

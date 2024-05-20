@@ -129,7 +129,9 @@ export default function HomePage() {
           <p className={styles.ex_card_text}>YEARS OF EXPERIENCE</p>
         </div>
         <div className={styles.ex_card}>
-          <h2 className={styles.ex_card_number}>{client}+</h2>
+          <h2 className={`${styles.ex_card_number} ${styles.special}`}>
+            {client}+
+          </h2>
           <p className={styles.ex_card_text}>SATISFIED CLIENTS</p>
         </div>
         <div className={styles.ex_card}>

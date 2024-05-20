@@ -16,7 +16,7 @@
         margin-bottom: 0px;
       }
       .name {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 600;
         margin-bottom: 10px;
       }
@@ -42,8 +42,11 @@
       .paragraph {
         color: #3c3b3b;
         font-size: 0.75rem;
-        margin-bottom: 30px;
+        font-weight: 500;
         line-height: 1.1rem;
+        max-width: 550px;
+        margin: auto;
+        margin-bottom: 30px;
       }
       .button {
         background-color: #000d85;
@@ -55,10 +58,10 @@
       }
     }
     .image_container_bg {
-      background: url("/images/background/mobileCeoBg.png");
+      background: url("/images/background/ceobg.png");
       background-size: 100% 100%;
       width: 80%;
-      max-width: 380px;
+      max-width: 300px;
       max-height: 350px;
       margin: auto;
       display: flex;
@@ -69,7 +72,8 @@
       .ceo_img {
         padding-top: 20px;
         margin-top: 10px;
-        border-radius: 38%;
+        // border-radius: 38%;
+        border-radius: 16px;
         width: 100%;
         max-height: 340px;
       }
@@ -93,12 +97,16 @@
       flex-direction: column;
       align-items: center;
       .ex_card_number {
-        font-size: 1.6rem;
+        font-size: 2rem;
         font-weight: 700;
         color: #0010a3;
+        position: relative;
+      }
+      .special {
+        margin-left: 15px;
       }
       .ex_card_text {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
         color: #4d4d4d;
       }
     }
@@ -114,15 +122,15 @@
           margin-bottom: 0px;
         }
         .name {
-          font-size: 1.6rem;
+          font-size: 1.8rem;
           margin-bottom: 5px;
         }
         .title {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
           margin-bottom: 20px;
         }
         .paragraph {
-          font-size: 0.85rem;
+          font-size: 0.9rem;
           line-height: 1.3rem;
         }
       }
@@ -177,17 +185,15 @@
         justify-content: center;
         .i_am {
           font-size: 1rem;
-          // margin-bottom: 0px;
         }
         .name {
-          font-size: 1.75rem;
+          font-size: 2.2rem;
         }
         .title {
           font-weight: 500;
         }
         .paragraph {
           font-size: 1rem;
-          // width: 85%;
         }
       }
       .button {
@@ -233,14 +239,18 @@
           }
         }
         .paragraph {
-          font-size: 0.9rem;
+          font-size: 1rem;
           line-height: 1.3rem;
+          width: 90%;
+          margin-left: 0;
+          margin-top: 0;
         }
         .button {
           margin-left: 0;
           font-weight: 400;
           border-radius: 4px;
           font-size: 1.2rem;
+          font-weight: 400;
           margin-bottom: 20px;
           width: auto;
           padding: 10px 15px;
