@@ -38,15 +38,17 @@ export default function ContactSection() {
       >
         CONTACT ME
       </motion.h2>
+
       <motion.p
         ref={ref}
-        initial={{ opacity: 0, x: 100 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
         transition={{ duration: 1 }}
         className={styles.credentials}
       >
         Counselling Psychologist | Lovelife Coach | Therapist | Lecturer
       </motion.p>
+
       <div className={styles.contact_container}>
         <motion.div className={styles.form_container}>
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
