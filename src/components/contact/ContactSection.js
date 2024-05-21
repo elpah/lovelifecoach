@@ -48,7 +48,6 @@ export default function ContactSection() {
         Counselling Psychologist | Lovelife Coach | Therapist | Lecturer
       </motion.p>
       <div className={styles.contact_container}>
-        {/* <div className={styles.contact_info}></div> */}
         <motion.div className={styles.form_container}>
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <input
@@ -135,6 +134,13 @@ export default function ContactSection() {
             </div>
           </div>
         </motion.div>
+        <div className={styles.contact_img}>
+          <img
+            className={styles.img}
+            src="/images/ceo/contactimg.png"
+            alt="contact image"
+          />
+        </div>
       </div>
     </div>
   );

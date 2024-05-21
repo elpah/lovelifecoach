@@ -82,8 +82,8 @@ export default function HomePage() {
                   "COUNSELLOR",
                   "PROFESSIONAL THERAPIST",
                   "LOVELIFE COACH",
-                  "CAREER COACH",
                   "CONFERENCE SPEAKER",
+                  "CAREER COACH",
                 ]}
                 loop={5}
                 cursor

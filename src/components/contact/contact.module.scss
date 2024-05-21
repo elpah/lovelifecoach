@@ -18,12 +18,11 @@
     width: 90%;
     margin: auto;
     margin-bottom: 50px;
-
     display: flex;
     flex-direction: column;
-    // .contact_info {
-    //   display: none;
-    // }
+    .contact_img {
+      display: none;
+    }
     .form_container {
       .form {
         margin-top: 30px;
@@ -46,25 +45,27 @@
         }
         .form_input {
           font-weight: 100px;
-          height: 40px;
+          font-size: 0.7rem;
+          height: 35px;
           border: 0.5px solid #a4a3a3;
           margin-bottom: 15px;
           padding: 10px;
           cursor: text;
         }
         .form_textarea {
-          height: 150px;
+          height: 120px;
+          font-size: 0.8rem;
           width: 100%;
           padding: 10px;
           border: 0.5px solid #a4a3a3;
           resize: none;
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
         .submit {
           background-color: #0010a3;
           color: #fff;
           border-radius: 4px;
-          height: 50px;
+          height: 40px;
           font-weight: 500;
           cursor: pointer;
           transition: all 0.2s ease-in-out;
@@ -74,7 +75,7 @@
         }
       }
       .email_phone_container {
-        margin-top: 35px;
+        margin-top: 25px;
         display: flex;
         flex-direction: row;
 
@@ -227,11 +228,18 @@
       margin-top: 50px;
       flex-direction: row;
       justify-content: space-between;
-      .contact_info {
-        display: block;
+      .contact_img {
+        display: flex;
+        justify-content: flex-end;
+        // align-items: center;
+        // border: 1px solid black;
+        width: 45%;
+        .img {
+          height: 80%;
+        }
       }
       .form_container {
-        width: 48%;
+        width: 50%;
         .form {
           margin-top: 0;
         }
@@ -270,31 +278,36 @@
     .contact_container {
       width: 80%;
       max-width: 1500px;
-      margin-top: 40px;
-      .contact_info {
+      margin-top: 80px;
+      .contact_img {
+        justify-content: center;
       }
 
       .form_container {
         width: 48%;
-        .email_phone_container {
-          .lable_container {
-            .label_icon {
-              margin-right: 12px;
-              width: 25px;
+        .form {
+          .email_phone {
+            .form_input {
+              width: 49%;
+              // height: 45px;
             }
-
-            .label_details_container {
-              font-size: 16px;
-
-              .label_name {
-                font-size: 16px;
-              }
-              .label_value {
-                font-size: 16px;
-
-                color: #0010a3;
-              }
-            }
+          }
+          .error {
+            color: red;
+            margin-top: -10px;
+            margin-bottom: 15px;
+          }
+          .form_input {
+            font-size: 0.95rem;
+            height: 45px;
+          }
+          .form_textarea {
+            height: 140px;
+            font-size: 0.95rem;
+          }
+          .submit {
+            height: 45px;
+            font-weight: 500;
           }
         }
       }
