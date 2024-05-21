@@ -1,6 +1,6 @@
 # Counsellor Portfolio Project
 
-** Overview **
+**Overview**
 - This is a single-page portfolio created for a counsellor. 
 - It is made up of 4 sections: Home, About, Services, and Contact. 
 - The portfolio give clients with  overview of the his expertise, services, and also allows them to reach him via a contact form
