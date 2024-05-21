@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import styles from "./navbar.module.scss";
 
 export default function Navbar({ sections }) {
@@ -39,29 +40,45 @@ export default function Navbar({ sections }) {
   return (
     <header className={styles.container}>
       <nav ref={navbarRef} className={styles.nav_container}>
-        <div className={styles.logo_container}>
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0, y: 0, rotate: 360 }}
+          transition={{ duration: 1 }}
+          className={styles.logo_container}
+        >
           <img
             className={styles.logo}
             src="/images/nav_icons/lovelifelogo.png"
             alt="Logo"
           />
-        </div>
+        </motion.div>
 
         <ul className={styles.navlink_container}>
           {sections.map((section) => (
-            <li
+            <motion.li
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 1 }}
               key={section.id}
               onClick={() => scrollToSection(section.id)}
               className={styles.navlink}
             >
               {section.title}
-            </li>
+            </motion.li>
           ))}
         </ul>
-        <div className={styles.button_container}>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0, y: 0 }}
+          transition={{ duration: 1 }}
+          className={styles.button_container}
+        >
           <button className={styles.button}>Book Appointment</button>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0, y: 0, rotate: -360 }}
+          transition={{ duration: 1 }}
           onClick={() => setIsOpen(!isOpen)}
           className={styles.icon_container}
         >
@@ -74,7 +91,7 @@ export default function Navbar({ sections }) {
             className={styles.icon}
             alt="open close icon"
           />
-        </div>
+        </motion.div>
       </nav>
 
       {isOpen && (

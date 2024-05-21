@@ -1,18 +1,22 @@
 .main {
-  // margin-bottom: 60px;
   margin-top: 100px;
   .cover_container {
+    display: flex;
+    flex-direction: column;
     width: 90%;
     margin: auto;
     .details_container {
+      margin-top: 10px;
+      order: 2;
+      text-align: center;
       .i_am {
+        display: none;
         color: #000;
         font-size: 0.8rem;
-        // margin-top: 40px;
         margin-bottom: 0px;
       }
       .name {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 600;
         margin-bottom: 10px;
       }
@@ -38,8 +42,11 @@
       .paragraph {
         color: #3c3b3b;
         font-size: 0.75rem;
-        margin-bottom: 30px;
+        font-weight: 500;
         line-height: 1.1rem;
+        max-width: 550px;
+        margin: auto;
+        margin-bottom: 30px;
       }
       .button {
         background-color: #000d85;
@@ -51,10 +58,10 @@
       }
     }
     .image_container_bg {
-      background: url("/images/background/mobileCeoBg.png");
+      background: url("/images/background/ceobg.png");
       background-size: 100% 100%;
       width: 80%;
-      max-width: 380px;
+      max-width: 300px;
       max-height: 350px;
       margin: auto;
       display: flex;
@@ -65,7 +72,8 @@
       .ceo_img {
         padding-top: 20px;
         margin-top: 10px;
-        border-radius: 38%;
+        // border-radius: 38%;
+        border-radius: 16px;
         width: 100%;
         max-height: 340px;
       }
@@ -89,12 +97,16 @@
       flex-direction: column;
       align-items: center;
       .ex_card_number {
-        font-size: 1.6rem;
+        font-size: 2rem;
         font-weight: 700;
         color: #0010a3;
+        position: relative;
+      }
+      .special {
+        margin-left: 15px;
       }
       .ex_card_text {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
         color: #4d4d4d;
       }
     }
@@ -104,20 +116,21 @@
   .main {
     .cover_container {
       .details_container {
+        margin-top: 20px;
         .i_am {
           font-size: 0.9rem;
           margin-bottom: 0px;
         }
         .name {
-          font-size: 1.6rem;
+          font-size: 1.8rem;
           margin-bottom: 5px;
         }
         .title {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
           margin-bottom: 20px;
         }
         .paragraph {
-          font-size: 0.85rem;
+          font-size: 0.9rem;
           line-height: 1.3rem;
         }
       }
@@ -138,18 +151,23 @@
           font-size: 1rem;
           font-weight: 400;
         }
+        .name {
+          font-size: 2rem;
+          margin-bottom: 5px;
+        }
 
         .title {
-          font-size: 1.3rem;
+          font-size: 1.8rem;
           font-weight: 400;
         }
         .paragraph {
           font-size: 0.9rem;
-          width: 90%;
+          // width: 90%;
         }
       }
       .button {
-        transform: scale(1.1);
+        font-size: 1.1rem;
+        // padding: 20px 15px;
         margin-left: 8px;
         margin-bottom: 40px;
       }
@@ -161,28 +179,29 @@
     .cover_container {
       min-height: 70vh;
       .details_container {
+        text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
         .i_am {
           font-size: 1rem;
-          // margin-bottom: 0px;
         }
         .name {
-          font-size: 1.75rem;
+          font-size: 2.2rem;
         }
         .title {
           font-weight: 500;
         }
         .paragraph {
           font-size: 1rem;
-          width: 85%;
         }
       }
       .button {
         transform: scale(1.1);
-        margin-left: 8px;
-        margin-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
+
+        // margin: auto auto 40px;
       }
     }
   }
@@ -191,21 +210,26 @@
 @media screen and (min-width: 767px) {
   .main {
     .cover_container {
-      display: flex;
+      // display: flex;
       flex-direction: row;
       .details_container {
+        order: 1;
+        text-align: left;
+        justify-content: center;
+
         .i_am {
+          display: block;
           margin-top: 0;
           font-size: 1rem;
           margin-bottom: 0px;
         }
         .name {
-          font-weight: 500;
+          font-weight: 600;
           font-size: 2.2rem;
-          // margin-bottom: 10px;
+          margin-bottom: 0;
         }
         .title {
-          font-size: 1.7rem;
+          font-size: 1.6rem;
           margin-bottom: 20px;
           .title_tag {
             .blinking_cursor {
@@ -215,14 +239,21 @@
           }
         }
         .paragraph {
-          font-size: 0.9rem;
+          font-size: 1rem;
           line-height: 1.3rem;
+          width: 90%;
+          margin-left: 0;
+          margin-top: 0;
         }
         .button {
+          margin-left: 0;
           font-weight: 400;
           border-radius: 4px;
-          font-size: 0.9rem;
+          font-size: 1.2rem;
+          font-weight: 400;
           margin-bottom: 20px;
+          width: auto;
+          padding: 10px 15px;
           transition: all 0.3s ease;
           &:hover {
             background-color: #1524a3;
@@ -232,6 +263,7 @@
         }
       }
       .image_container_bg {
+        order: 2;
         background: url("/images/background/desktopCeoBg.png");
 
         background-size: 100% 100%;
@@ -289,7 +321,9 @@
           line-height: 1.5rem;
         }
         .button {
-          font-size: 1.2rem;
+          font-size: 1.5rem;
+          width: auto;
+          padding: 10px 15px;
         }
       }
     }

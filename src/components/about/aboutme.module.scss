@@ -8,7 +8,10 @@
     margin-bottom: 25px;
     .header_container {
       position: relative;
+      display: flex;
+      justify-content: center;
       margin-bottom: 15px;
+      width: 100%;
       .header_shadow {
         user-select: none;
         font-style: italic;
@@ -24,17 +27,21 @@
       }
     }
     .text {
+      // text-align: center;
       color: #4d4d4d;
       font-size: 0.85rem;
       font-weight: 300;
+
       margin-bottom: 25px;
     }
     .button {
+      // display: block;
       font-weight: 500;
       font-size: 0.9rem;
       border-radius: 4px;
       color: #0010a3;
       border: 1px solid #0010a3;
+      margin: auto;
       padding: 10px 20px;
     }
   }
@@ -130,6 +137,7 @@
     flex-direction: row;
     .about_container {
       .header_container {
+        display: block;
         .header_shadow {
           font-size: 2.7rem;
         }

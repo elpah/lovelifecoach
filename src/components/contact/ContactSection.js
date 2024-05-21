@@ -1,8 +1,12 @@
 "use client";
 import styles from "./contact.module.scss";
 import { FieldValues, useForm } from "react-hook-form";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function ContactSection() {
+  const { ref, inView } = useInView({ once: true });
+
   const {
     register,
     handleSubmit,
@@ -25,13 +29,26 @@ export default function ContactSection() {
 
   return (
     <div id="contact" className={styles.container}>
-      <h2 className={styles.header}>CONTACT ME</h2>
-      <p className={styles.credentials}>
+      <motion.h2
+        ref={ref}
+        initial={{ opacity: 0, x: -100 }}
+        animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+        transition={{ duration: 1 }}
+        className={styles.header}
+      >
+        CONTACT ME
+      </motion.h2>
+      <motion.p
+        ref={ref}
+        initial={{ opacity: 0, x: 100 }}
+        animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+        transition={{ duration: 1 }}
+        className={styles.credentials}
+      >
         Counselling Psychologist | Lovelife Coach | Therapist | Lecturer
-      </p>
+      </motion.p>
       <div className={styles.contact_container}>
-        <div className={styles.contact_info}></div>
-        <div className={styles.form_container}>
+        <motion.div className={styles.form_container}>
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <input
               className={styles.form_input}
@@ -116,6 +133,13 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
+        </motion.div>
+        <div className={styles.contact_img}>
+          <img
+            className={styles.img}
+            src="/images/ceo/contactimg.png"
+            alt="contact image"
+          />
         </div>
       </div>
     </div>
