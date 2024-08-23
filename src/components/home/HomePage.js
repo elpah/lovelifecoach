@@ -13,7 +13,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const experienceIntervalId = setInterval(() => {
-      if (experience < 5) {
+      if (experience < 5 && inView) {
         setExperience((prevYears) => prevYears + 1);
       }
     }, 100);
@@ -21,11 +21,11 @@ export default function HomePage() {
     return () => {
       clearInterval(experienceIntervalId);
     };
-  }, [experience]);
+  }, [experience, inView]);
 
   useEffect(() => {
     const clientIntervalId = setInterval(() => {
-      if (client < 50) {
+      if (client < 50 && inView) {
         setClient((prevAge) => prevAge + 1);
       }
     }, 10);
@@ -125,11 +125,16 @@ export default function HomePage() {
       </section>
       <section className={styles.experience_section}>
         <div className={styles.ex_card}>
-          <h2 className={styles.ex_card_number}>0{experience}</h2>
+          <h2 className={styles.ex_card_number} ref={ref}>
+            0{experience}
+          </h2>
           <p className={styles.ex_card_text}>YEARS OF EXPERIENCE</p>
         </div>
         <div className={styles.ex_card}>
-          <h2 className={`${styles.ex_card_number} ${styles.special}`}>
+          <h2
+            className={`${styles.ex_card_number} ${styles.special}`}
+            ref={ref}
+          >
             {client}+
           </h2>
           <p className={styles.ex_card_text}>SATISFIED CLIENTS</p>
