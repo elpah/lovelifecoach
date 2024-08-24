@@ -48,7 +48,7 @@ export default function Footer({ sections }) {
             />
           </Link>
 
-          <Link href="" target="blank">
+          <Link href="https://x.com/_lovelifecoach" target="blank">
             <img
               className={styles.icon}
               src="/images/socials_icons/twitter.png"
