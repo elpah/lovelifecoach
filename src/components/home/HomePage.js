@@ -33,11 +33,11 @@ export default function HomePage() {
     return () => {
       clearInterval(clientIntervalId);
     };
-  }, [client]);
+  }, [client, inView]);
 
   useEffect(() => {
     const awardsIntervalId = setInterval(() => {
-      if (awards < 4) {
+      if (awards < 4 && inView) {
         setAwards((prevExperience) => prevExperience + 1);
       }
     }, 150);
@@ -45,15 +45,27 @@ export default function HomePage() {
     return () => {
       clearInterval(awardsIntervalId);
     };
-  }, [awards]);
+  }, [awards, inView]);
 
   return (
     <main id="home" className={styles.main}>
       <section className={styles.cover_container}>
+        <div className={styles.image_container_wrapper}>
+          <div className={styles.image_container_bg}>
+            <motion.img
+              ref={ref}
+              initial={{ opacity: 0, y: 70 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 1 }}
+              className={styles.ceo_img}
+              src="/images/ceo/bka.png"
+            />
+          </div>
+        </div>
         <div className={styles.details_container}>
           <motion.p
             ref={ref}
-            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            animate={{ opacity: 1, x: 0, y: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1 }}
             className={styles.i_am}
@@ -62,8 +74,8 @@ export default function HomePage() {
           </motion.p>
           <motion.h2
             ref={ref}
-            initial={{ opacity: 0, x: -100 }}
-            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 1 }}
             className={styles.name}
           >
@@ -71,7 +83,7 @@ export default function HomePage() {
           </motion.h2>
           <motion.h3
             initial={{ opacity: 0, x: -100 }}
-            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 1 }}
             className={styles.title}
           >
@@ -95,8 +107,9 @@ export default function HomePage() {
             </span>
           </motion.h3>
           <motion.p
+            ref={ref}
             initial={{ opacity: 0, x: -100 }}
-            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 1 }}
             className={styles.paragraph}
           >
@@ -106,26 +119,19 @@ export default function HomePage() {
           </motion.p>
           <motion.button
             initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+            animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.5 }}
             className={styles.button}
           >
             Book Appointment
           </motion.button>
         </div>
-        <div className={styles.image_container_wrapper}>
-          <div className={styles.image_container_bg}>
-            <motion.img
-              initial={{ opacity: 0, y: 70 }}
-              animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
-              transition={{ duration: 1 }}
-              className={styles.ceo_img}
-              src="/images/ceo/bka.png"
-            />
-          </div>
-        </div>
       </section>
-      <section className={styles.experience_section}>
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+        className={styles.experience_section}
+      >
         <div className={styles.ex_card}>
           <h2 className={styles.ex_card_number} ref={ref}>
             0{experience}
@@ -145,7 +151,7 @@ export default function HomePage() {
           <h2 className={styles.ex_card_number}>0{awards}</h2>
           <p className={styles.ex_card_text}>AWARDS WON</p>
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 }

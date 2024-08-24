@@ -73,6 +73,18 @@
             transform: scale(1.02);
           }
         }
+        .status {
+          font-size: 16px;
+          margin-top: 10px;
+
+          &.success {
+            color: rgb(17, 108, 17);
+          }
+
+          &.error {
+            color: red;
+          }
+        }
       }
       .email_phone_container {
         margin-top: 25px;
