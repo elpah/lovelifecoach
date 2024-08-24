@@ -1,12 +1,27 @@
 "use client";
 import styles from "./contact.module.scss";
-import { FieldValues, useForm } from "react-hook-form";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Link from "next/link";
+import emailjs from "@emailjs/browser";
 
 export default function ContactSection() {
   const { ref, inView } = useInView({ once: true });
+  const [submissionStatus, setSubmissionStatus] = useState(null);
+
+  const getStatusMessage = () => {
+    switch (submissionStatus) {
+      case "sending":
+        return "Sending...";
+      case "success":
+        return "Email successfully sent!";
+      case "error":
+        return "Failed to send email. Please try again.";
+      default:
+        return null;
+    }
+  };
 
   const {
     register,
@@ -16,17 +31,27 @@ export default function ContactSection() {
   } = useForm();
 
   async function onSubmit(data) {
+    setSubmissionStatus("sending");
     try {
-      await emailjs
-        .send("service_hu5emdb", "template_cgezxxo", data, "uZUcPqeRan5awHad7")
-        .then(() => {
-          reset();
-          notify();
-        });
+      await emailjs.send(
+        "service_b31n8mg",
+        "template_fd086f8",
+        data,
+        "uZUcPqeRan5awHad7"
+      );
+      reset();
+      setSubmissionStatus("success");
     } catch (error) {
       console.error("Submission failed:", error);
+      setSubmissionStatus("error");
     }
   }
+
+  const handleChange = () => {
+    if (submissionStatus) {
+      setSubmissionStatus(null);
+    }
+  };
 
   return (
     <div id="contact" className={styles.container}>
@@ -59,6 +84,7 @@ export default function ContactSection() {
               {...register("name", {
                 required: true,
               })}
+              onChange={handleChange}
             />
             {errors.name?.type === "required" && (
               <p className={styles.error}>The name field is required</p>
@@ -70,15 +96,17 @@ export default function ContactSection() {
                   required: true,
                   pattern: {
                     value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: "invalid format",
+                    message: "Invalid email format",
                   },
                 })}
                 placeholder="Email"
+                onChange={handleChange}
               />
               <input
                 className={styles.form_input}
                 {...register("phone")}
                 placeholder="Phone Number"
+                onChange={handleChange}
               />
             </div>
             {errors.email?.type === "required" && (
@@ -92,6 +120,7 @@ export default function ContactSection() {
               className={styles.form_input}
               placeholder="Subject"
               {...register("subject")}
+              onChange={handleChange}
             />
 
             <textarea
@@ -101,16 +130,36 @@ export default function ContactSection() {
                 required: true,
                 minLength: 5,
               })}
+              onChange={handleChange}
             />
             {errors.message?.type === "required" && (
               <p className={styles.error}>The message field is required</p>
             )}
             {errors.message?.type === "minLength" && (
               <p className={styles.error}>
-                Minimum lenght should be 5 characters
+                Minimum length should be 5 characters
               </p>
             )}
-            <button className={styles.submit}>Send</button>
+            <button
+              className={styles.submit}
+              type="submit"
+              disabled={isSubmitting}
+            >
+              Send
+            </button>
+            {submissionStatus && (
+              <p
+                className={`${styles.status} ${
+                  submissionStatus === "success"
+                    ? styles.success
+                    : submissionStatus === "error"
+                    ? styles.error
+                    : ""
+                }`}
+              >
+                {getStatusMessage()}
+              </p>
+            )}
           </form>
           <div className={styles.email_phone_container}>
             <div className={styles.lable_container}>
@@ -130,7 +179,7 @@ export default function ContactSection() {
             <div className={styles.lable_container}>
               <img
                 className={styles.label_icon}
-                src="images/phone_icon.png"
+                src="/images/phone_icon.png"
                 alt="phone icon"
               />
               <a href="tel:+233242750713">
