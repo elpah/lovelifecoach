@@ -3,6 +3,7 @@ import styles from "./contact.module.scss";
 import { FieldValues, useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 export default function ContactSection() {
   const { ref, inView } = useInView({ once: true });
@@ -118,21 +119,26 @@ export default function ContactSection() {
                 src="/images/email_icon.png"
                 alt="email icon"
               />
-              <div className={styles.label_details_container}>
-                <p className={styles.label_name}>EMAIL</p>
-                <p className={styles.label_value}>blessasiedu@gmail.com</p>
-              </div>
+              <a href="mailto:wkasiedu@gmail.com">
+                <div className={styles.label_details_container}>
+                  <p className={styles.label_name}>EMAIL</p>
+                  <p className={styles.label_value}>wkasiedu@gmail.com</p>
+                </div>
+              </a>
             </div>
+
             <div className={styles.lable_container}>
               <img
                 className={styles.label_icon}
                 src="images/phone_icon.png"
                 alt="phone icon"
               />
-              <div className={styles.label_details_container}>
-                <p className={styles.label_name}>PHONE</p>
-                <p className={styles.label_value}>+23324748293</p>
-              </div>
+              <a href="tel:+233242750713">
+                <div className={styles.label_details_container}>
+                  <p className={styles.label_name}>PHONE</p>
+                  <p className={styles.label_value}>+233242750713</p>
+                </div>
+              </a>
             </div>
           </div>
         </motion.div>
