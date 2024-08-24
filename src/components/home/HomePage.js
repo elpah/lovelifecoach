@@ -113,14 +113,16 @@ export default function HomePage() {
             Book Appointment
           </motion.button>
         </div>
-        <div className={styles.image_container_bg}>
-          <motion.img
-            initial={{ opacity: 0, y: 70 }}
-            animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
-            transition={{ duration: 1 }}
-            className={styles.ceo_img}
-            src="/images/ceo/bka.png"
-          />
+        <div className={styles.image_container_wrapper}>
+          <div className={styles.image_container_bg}>
+            <motion.img
+              initial={{ opacity: 0, y: 70 }}
+              animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+              transition={{ duration: 1 }}
+              className={styles.ceo_img}
+              src="/images/ceo/bka.png"
+            />
+          </div>
         </div>
       </section>
       <section className={styles.experience_section}>

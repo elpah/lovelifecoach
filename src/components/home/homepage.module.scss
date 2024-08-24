@@ -57,25 +57,28 @@
         margin-bottom: 20px;
       }
     }
-    .image_container_bg {
-      background: url("/images/background/ceobg.png");
-      background-size: 100% 100%;
-      width: 80%;
-      max-width: 300px;
-      max-height: 350px;
-      margin: auto;
+    .image_container_wrapper {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-position: center;
-      background-repeat: no-repeat;
-      .ceo_img {
-        padding-top: 20px;
-        margin-top: 10px;
-        // border-radius: 38%;
-        border-radius: 16px;
-        width: 100%;
-        max-height: 340px;
+      .image_container_bg {
+        background: url("/images/background/ceobg.png");
+        background-size: 100% 100%;
+        width: 80%;
+        max-width: 300px;
+        max-height: 350px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        .ceo_img {
+          padding-top: 20px;
+          margin-top: 10px;
+          // border-radius: 38%;
+          border-radius: 16px;
+          width: 100%;
+          max-height: 340px;
+        }
       }
     }
   }
@@ -177,7 +180,7 @@
 @media screen and (min-width: 600px) {
   .main {
     .cover_container {
-      min-height: 70vh;
+      min-height: 50vh;
       .details_container {
         text-align: center;
         display: flex;
@@ -207,11 +210,15 @@
   }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .main {
     .cover_container {
-      // display: flex;
+      display: flex;
+      margin-bottom: 50px;
+      margin-top: 130px;
+
       flex-direction: row;
+      justify-content: space-between;
       .details_container {
         order: 1;
         text-align: left;
@@ -262,31 +269,36 @@
           }
         }
       }
-      .image_container_bg {
+      .image_container_wrapper {
+        // justify-content: flex-end;
         order: 2;
-        background: url("/images/background/desktopCeoBg.png");
-
-        background-size: 100% 100%;
-        max-height: none;
-        min-height: 430px;
         max-width: 300px;
-        width: 100%;
-        margin: auto;
-        justify-content: flex-end;
-        .ceo_img {
-          padding-top: 20px;
+        // width: 40%;
+        .image_container_bg {
+          background: url("/images/background/desktopCeoBg.png");
+
+          background-size: 100% 100%;
           max-height: none;
-          border-radius: 48%;
-          margin-left: 10px;
-          min-height: 320px;
-          max-height: 340px;
+          min-height: 430px;
+          // max-width: 300px;
+          width: 100%;
+          margin: auto;
+          justify-content: flex-end;
+          .ceo_img {
+            padding-top: 20px;
+            max-height: none;
+            border-radius: 48%;
+            margin-left: 10px;
+            min-height: 320px;
+            max-height: 340px;
+          }
         }
       }
     }
     .experience_section {
       margin: auto;
       flex-direction: row;
-      width: 90%;
+      // width: 90%;
       height: 100px;
       padding: 50px;
       border-radius: 4px;
@@ -297,9 +309,11 @@
 @media screen and (min-width: 1024px) {
   .main {
     .cover_container {
+      min-height: 0vh;
+
       width: 80%;
       max-width: 1500px;
-      margin: auto;
+      // margin: auto;
       .details_container {
         .i_am {
           margin-top: 0;
@@ -326,9 +340,14 @@
           padding: 10px 15px;
         }
       }
+      .image_container_wrapper {
+        .image_container_bg {
+          min-width: 280px;
+        }
+      }
     }
     .experience_section {
-      max-width: 1400px;
+      max-width: 1500px;
       margin: auto;
       flex-direction: row;
       width: 80%;
@@ -363,6 +382,8 @@
 @media screen and (min-width: 1440px) {
   .main {
     .cover_container {
+      margin-top: 180px;
+      margin-bottom: 110px;
       .details_container {
         .i_am {
           margin-top: 0;
@@ -384,7 +405,7 @@
           font-size: 1.3rem;
           font-weight: 300;
           width: 85%;
-          max-width: 800px;
+          max-width: 1200px;
           line-height: 1.6rem;
         }
         .button {
@@ -403,6 +424,20 @@
         }
         .ex_card_text {
           font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .main {
+    .cover_container {
+      .details_container {
+        .paragraph {
+          width: 90%;
+          max-width: 1200px;
+          line-height: 2.3rem;
         }
       }
     }
