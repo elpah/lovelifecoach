@@ -1,4 +1,9 @@
 .main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 100px;
   .cover_container {
     display: flex;
@@ -135,6 +140,10 @@
           font-size: 0.9rem;
           line-height: 1.3rem;
         }
+        .button {
+          width: 180px;
+          padding: 10px;
+        }
       }
     }
     .experience_section {
@@ -197,7 +206,7 @@
         }
       }
       .button {
-        transform: scale(1.1);
+        transform: scale(1.2);
         margin-left: auto;
         margin-right: auto;
       }
@@ -207,6 +216,7 @@
 
 @media screen and (min-width: 768px) {
   .main {
+    margin-top: 0;
     .cover_container {
       display: flex;
       margin-bottom: 50px;
@@ -265,7 +275,7 @@
         }
       }
       .image_container_wrapper {
-        // justify-content: flex-end;
+        width: 58%;
         order: 2;
         max-width: 300px;
         // width: 40%;
@@ -366,8 +376,38 @@
   .main {
     .cover_container {
       .details_container {
+        .i_am {
+          margin-top: 0;
+          margin-bottom: 10px;
+        }
+        .name {
+          margin-bottom: 10px;
+          font-size: 2.8rem;
+        }
+        .title {
+          font-size: 2.2rem;
+        }
         .paragraph {
           font-size: 1.2rem;
+          font-weight: 400;
+          width: 90%;
+          line-height: 1.8rem;
+        }
+      }
+      .image_container_wrapper {
+        .image_container_bg {
+          min-width: 280px;
+        }
+      }
+    }
+    .experience_section {
+      height: 130px;
+      .ex_card {
+        .ex_card_number {
+          font-size: 2rem;
+        }
+        .ex_card_text {
+          font-size: 1rem;
         }
       }
     }
@@ -378,7 +418,7 @@
   .main {
     .cover_container {
       margin-top: 180px;
-      margin-bottom: 110px;
+      margin-bottom: 70px;
       .details_container {
         .i_am {
           margin-top: 0;
@@ -395,17 +435,22 @@
           font-size: 2.4rem;
         }
         .paragraph {
-          font-size: 1.3rem;
+          font-size: 1.4rem;
           font-weight: 300;
           width: 85%;
           max-width: 1200px;
-          line-height: 1.6rem;
+          line-height: 1.9rem;
         }
         .button {
-          font-size: 1.3rem;
-          width: 220px;
-          padding-top: 8px;
-          padding-bottom: 8px;
+          font-size: 1.5rem;
+          width: 300px;
+          padding: 10px 10px;
+        }
+      }
+      .image_container_wrapper {
+        max-width: 330px;
+        .image_container_bg {
+          max-width: 330px;
         }
       }
     }
@@ -413,10 +458,10 @@
       height: 120px;
       .ex_card {
         .ex_card_number {
-          font-size: 2.2rem;
+          font-size: 2.5rem;
         }
         .ex_card_text {
-          font-size: 0.9rem;
+          font-size: 1rem;
         }
       }
     }
@@ -425,12 +470,40 @@
 
 @media screen and (min-width: 1600px) {
   .main {
+    min-height: 0;
+
     .cover_container {
+      // margin-bottom: -10px;
       .details_container {
+        .i_am {
+          // margin-top: 0;
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+        }
+        .name {
+          font-size: 3.5rem;
+          margin-bottom: 5px;
+        }
+        .title {
+          font-size: 2.6rem;
+        }
         .paragraph {
+          font-size: 1.6rem;
           width: 90%;
           max-width: 1200px;
           line-height: 2.3rem;
+        }
+        .button {
+          // font-size: 1.3rem;
+          width: 300px;
+          padding: 15px 15px;
+        }
+      }
+      .image_container_wrapper {
+        max-width: 360px;
+        .image_container_bg {
+          height: 500px;
+          max-width: 360px;
         }
       }
     }

@@ -39,16 +39,22 @@ export default function AboutMe() {
           transition={{ duration: 1 }}
           className={styles.text}
         >
-          Struggling to find love or reignite the spark? Bless Kofi Asiedu,
-          therapist and love coach, can help.
+          Bless Kofi Asiedu is a seasoned counselling professional, licensed
+          with the Ghana Psychology Council, with several years of experience in
+          counselling. He has achieved remarkable results and earned numerous
+          referrals.
           <br />
           <br />
-          Combining therapeutic techniques with love coaching expertise, Bless
-          Kofi empowers you to build healthy relationships and create the
-          fulfilling love life you deserve.
+          Bless serves as CEO of Kissel Group and COO of Express Group. As a
+          lecturer, he teaches Counselling, Psychology, and Education courses at
+          two universities in Ghana.
           <br />
           <br />
-          Contact Bless Kofi today and start your journey towards lasting love.
+          His natural passion for counselling, combined with his expertise and
+          experience, makes him a sought-after professional. Combining
+          therapeutic techniques with love coaching expertise, Bless Kofi
+          empowers you to build healthy relationships and create the fulfilling
+          love life you deserve.
         </motion.p>
         <Link
           href="https://www.linkedin.com/in/bless-kofi-asiedu-ba-pgde-mphil-b16240b5/"
