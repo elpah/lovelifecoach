@@ -11,20 +11,16 @@ export default function AboutMe() {
       <div className={styles.about_container}>
         <div className={styles.header_container}>
           <motion.h2
-            ref={ref}
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
-            // animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
             transition={{ duration: 1 }}
             className={styles.header_shadow}
           >
             ABOUT ME
           </motion.h2>
           <motion.h3
-            ref={ref}
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
-            // animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
             transition={{ duration: 1 }}
             className={styles.name}
           >
@@ -34,21 +30,26 @@ export default function AboutMe() {
         <motion.p
           ref={ref}
           initial={{ opacity: 0, x: -100 }}
-          // animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 1 }}
           className={styles.text}
         >
-          Struggling to find love or reignite the spark? Bless Kofi Asiedu,
-          therapist and love coach, can help.
+          Bless Kofi Asiedu is a seasoned counselling professional, licensed
+          with the Ghana Psychology Council, with several years of experience in
+          counselling. He has achieved remarkable results and earned numerous
+          referrals.
           <br />
           <br />
-          Combining therapeutic techniques with love coaching expertise, Bless
-          Kofi empowers you to build healthy relationships and create the
-          fulfilling love life you deserve.
+          Bless serves as CEO of Kissel Group and COO of Express Group. As a
+          lecturer, he teaches Counselling, Psychology, and Education courses at
+          two universities in Ghana.
           <br />
           <br />
-          Contact Bless Kofi today and start your journey towards lasting love.
+          His natural passion for counselling, combined with his expertise and
+          experience, makes him a sought-after professional. Combining
+          therapeutic techniques with love coaching expertise, Bless Kofi
+          empowers you to build healthy relationships and create the fulfilling
+          love life you deserve.
         </motion.p>
         <Link
           href="https://www.linkedin.com/in/bless-kofi-asiedu-ba-pgde-mphil-b16240b5/"
@@ -57,7 +58,6 @@ export default function AboutMe() {
           <motion.button
             ref={ref}
             initial={{ opacity: 0, y: 100 }}
-            // animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
             animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.8 }}
             className={styles.button}
