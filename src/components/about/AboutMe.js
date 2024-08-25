@@ -11,20 +11,16 @@ export default function AboutMe() {
       <div className={styles.about_container}>
         <div className={styles.header_container}>
           <motion.h2
-            ref={ref}
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
-            // animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
             transition={{ duration: 1 }}
             className={styles.header_shadow}
           >
             ABOUT ME
           </motion.h2>
           <motion.h3
-            ref={ref}
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
-            // animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
             transition={{ duration: 1 }}
             className={styles.name}
           >
@@ -34,7 +30,6 @@ export default function AboutMe() {
         <motion.p
           ref={ref}
           initial={{ opacity: 0, x: -100 }}
-          // animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 1 }}
           className={styles.text}
@@ -63,7 +58,6 @@ export default function AboutMe() {
           <motion.button
             ref={ref}
             initial={{ opacity: 0, y: 100 }}
-            // animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
             animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.8 }}
             className={styles.button}

@@ -11,7 +11,22 @@ export default function HomePage() {
   const [awards, setAwards] = useState(0);
   const { ref, inView } = useInView();
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    const navbarHeight = 80;
+    if (section) {
+      const offset = section.offsetTop - navbarHeight;
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth",
+      });
+    }
+  };
+
   useEffect(() => {
+    if (experience > 0 && !inView) {
+      setExperience(0);
+    }
     const experienceIntervalId = setInterval(() => {
       if (experience < 5 && inView) {
         setExperience((prevYears) => prevYears + 1);
@@ -24,6 +39,9 @@ export default function HomePage() {
   }, [experience, inView]);
 
   useEffect(() => {
+    if (client > 0 && !inView) {
+      setClient(0);
+    }
     const clientIntervalId = setInterval(() => {
       if (client < 50 && inView) {
         setClient((prevAge) => prevAge + 1);
@@ -36,6 +54,9 @@ export default function HomePage() {
   }, [client, inView]);
 
   useEffect(() => {
+    if (awards > 0 && !inView) {
+      setAwards(0);
+    }
     const awardsIntervalId = setInterval(() => {
       if (awards < 4 && inView) {
         setAwards((prevExperience) => prevExperience + 1);
@@ -122,16 +143,13 @@ export default function HomePage() {
             animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.5 }}
             className={styles.button}
+            onClick={() => scrollToSection("contact")}
           >
-            Book Appointment
+            CONTACT ME...
           </motion.button>
         </div>
       </section>
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
-        className={styles.experience_section}
-      >
+      <section className={styles.experience_section}>
         <div className={styles.ex_card}>
           <h2 className={styles.ex_card_number} ref={ref}>
             0{experience}
@@ -151,7 +169,7 @@ export default function HomePage() {
           <h2 className={styles.ex_card_number}>0{awards}</h2>
           <p className={styles.ex_card_text}>AWARDS WON</p>
         </div>
-      </motion.section>
+      </section>
     </main>
   );
 }
