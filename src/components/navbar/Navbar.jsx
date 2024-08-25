@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import styles from "./navbar.module.scss";
+import Link from "next/link";
 
 export default function Navbar({ sections }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,7 +74,9 @@ export default function Navbar({ sections }) {
           transition={{ duration: 1 }}
           className={styles.button_container}
         >
-          <button className={styles.button}>Book Appointment</button>
+          <Link href="mailto:wkasiedu@gmail.com">
+            <button className={styles.button}>Book Appointment</button>
+          </Link>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 100 }}
@@ -109,7 +112,14 @@ export default function Navbar({ sections }) {
             </li>
           ))}
           <div className={styles.mobilebutton_container}>
-            <button className={styles.mobile_button}>Book Appointment</button>
+            <Link href="mailto:wkasiedu@gmail.com">
+              <button
+                className={styles.mobile_button}
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                Book Appointment
+              </button>
+            </Link>
           </div>
         </ul>
       )}
