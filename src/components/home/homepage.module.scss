@@ -313,8 +313,7 @@
 @media screen and (min-width: 1024px) {
   .main {
     .cover_container {
-      min-height: 0vh;
-
+      // min-height: 0vh;
       width: 80%;
       max-width: 1500px;
       // margin: auto;
@@ -470,12 +469,9 @@
 @media screen and (min-width: 1600px) {
   .main {
     min-height: 0;
-
     .cover_container {
-      // margin-bottom: -10px;
       .details_container {
         .i_am {
-          // margin-top: 0;
           font-size: 1.8rem;
           margin-bottom: 10px;
         }

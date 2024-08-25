@@ -4,24 +4,13 @@ import { Typewriter } from "nextjs-simple-typewriter";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 export default function HomePage() {
   const [experience, setExperience] = useState(0);
   const [client, setClient] = useState(0);
   const [awards, setAwards] = useState(0);
   const { ref, inView } = useInView();
-
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    const navbarHeight = 80;
-    if (section) {
-      const offset = section.offsetTop - navbarHeight;
-      window.scrollTo({
-        top: offset,
-        behavior: "smooth",
-      });
-    }
-  };
 
   useEffect(() => {
     if (experience > 0 && !inView) {
@@ -108,7 +97,6 @@ export default function HomePage() {
             transition={{ duration: 1 }}
             className={styles.title}
           >
-            A{" "}
             <span className={styles.title_tag}>
               <Typewriter
                 words={[
@@ -134,22 +122,25 @@ export default function HomePage() {
             transition={{ duration: 1 }}
             className={styles.paragraph}
           >
-            Direction is what you need when you are lost and NOT SPEED! The cost
-            involved in dealing with the issues of life have to be prioritized
-            and confronted.
+            Find Direction, Not Speed: Save Time, Money & Resources with
+            Professional Guidance and Support
           </motion.p>
-          <motion.button
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className={styles.button}
-            onClick={() => scrollToSection("contact")}
+          <Link
+            href="https://calendar.app.google/jBKqaycA9oxfgCq88"
+            target="blank"
           >
-            CONTACT ME...
-          </motion.button>
+            <motion.button
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className={styles.button}
+            >
+              Book Appointment
+            </motion.button>
+          </Link>
         </div>
       </section>
-      <section className={styles.experience_section}>
+      <div className={styles.experience_section}>
         <div className={styles.ex_card}>
           <h2 className={styles.ex_card_number} ref={ref}>
             0{experience}
@@ -169,7 +160,7 @@ export default function HomePage() {
           <h2 className={styles.ex_card_number}>0{awards}</h2>
           <p className={styles.ex_card_text}>AWARDS WON</p>
         </div>
-      </section>
+      </div>
     </main>
   );
 }

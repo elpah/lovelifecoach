@@ -74,7 +74,10 @@ export default function Navbar({ sections }) {
           transition={{ duration: 1 }}
           className={styles.button_container}
         >
-          <Link href="mailto:wkasiedu@gmail.com">
+          <Link
+            href="https://calendar.app.google/jBKqaycA9oxfgCq88"
+            target="blank"
+          >
             <button className={styles.button}>Book Appointment</button>
           </Link>
         </motion.div>
@@ -112,7 +115,10 @@ export default function Navbar({ sections }) {
             </li>
           ))}
           <div className={styles.mobilebutton_container}>
-            <Link href="mailto:wkasiedu@gmail.com">
+            <Link
+              href="https://calendar.app.google/jBKqaycA9oxfgCq88"
+              target="blank"
+            >
               <button
                 className={styles.mobile_button}
                 onClick={() => setIsOpen(!isOpen)}
