@@ -165,7 +165,7 @@ export default function ContactSection() {
             <div className={styles.lable_container}>
               <img
                 className={styles.label_icon}
-                src="/images/email_icon.png"
+                src="/images/email_icon.svg"
                 alt="email icon"
               />
               <a href="mailto:wkasiedu@gmail.com">
@@ -179,7 +179,7 @@ export default function ContactSection() {
             <div className={styles.lable_container}>
               <img
                 className={styles.label_icon}
-                src="/images/phone_icon.png"
+                src="/images/phone_icon.svg"
                 alt="phone icon"
               />
               <a href="tel:+233242750713">
@@ -194,7 +194,7 @@ export default function ContactSection() {
         <div className={styles.contact_img}>
           <img
             className={styles.img}
-            src="/images/ceo/contactimg.png"
+            src="/images/ceo/contactimg.webp"
             alt="contact image"
           />
         </div>

@@ -36,14 +36,14 @@ export default function Footer({ sections }) {
           <Link href="https://www.facebook.com/bless.asiedu86" target="blank">
             <img
               className={styles.icon}
-              src="/images/socials_icons/facebook.png"
+              src="/images/socials_icons/facebook.svg"
               alt="facebook icon"
             />
           </Link>
           <Link href="https://www.instagram.com/lovelife_coach/" target="blank">
             <img
               className={styles.icon}
-              src="/images/socials_icons/instagram.png"
+              src="/images/socials_icons/instagram.svg"
               alt="instagram icon"
             />
           </Link>

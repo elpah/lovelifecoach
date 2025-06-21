@@ -64,7 +64,7 @@
     .image_container_wrapper {
       display: flex;
       .image_container_bg {
-        background: url("/images/background/ceobg.png");
+        background: url("/images/background/ceobg.webp");
         background-size: 100% 100%;
         width: 80%;
         max-width: 300px;
@@ -277,14 +277,12 @@
         width: 58%;
         order: 2;
         max-width: 300px;
-        // width: 40%;
         .image_container_bg {
-          background: url("/images/background/desktopCeoBg.png");
+          background: url("/images/background/desktopCeoBg.webp");
 
           background-size: 100% 100%;
           max-height: none;
           min-height: 430px;
-          // max-width: 300px;
           width: 100%;
           margin: auto;
           justify-content: flex-end;
