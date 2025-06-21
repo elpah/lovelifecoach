@@ -74,7 +74,7 @@ export default function AboutMe() {
           transition={{ duration: 0.8 }}
           className={styles.ex_number}
         >
-          05
+          12
         </motion.h2>
         <motion.p
           ref={ref}
