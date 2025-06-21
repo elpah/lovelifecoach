@@ -17,10 +17,10 @@ export default function HomePage() {
       setExperience(0);
     }
     const experienceIntervalId = setInterval(() => {
-      if (experience < 5 && inView) {
+      if (experience < 12 && inView) {
         setExperience((prevYears) => prevYears + 1);
       }
-    }, 100);
+    }, 55);
 
     return () => {
       clearInterval(experienceIntervalId);
@@ -32,10 +32,10 @@ export default function HomePage() {
       setClient(0);
     }
     const clientIntervalId = setInterval(() => {
-      if (client < 50 && inView) {
+      if (client < 100 && inView) {
         setClient((prevAge) => prevAge + 1);
       }
-    }, 10);
+    }, 5);
 
     return () => {
       clearInterval(clientIntervalId);
@@ -47,7 +47,7 @@ export default function HomePage() {
       setAwards(0);
     }
     const awardsIntervalId = setInterval(() => {
-      if (awards < 4 && inView) {
+      if (awards < 5 && inView) {
         setAwards((prevExperience) => prevExperience + 1);
       }
     }, 150);
@@ -68,7 +68,7 @@ export default function HomePage() {
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 1 }}
               className={styles.ceo_img}
-              src="/images/ceo/bka.png"
+              src="/images/ceo/bka.webp"
             />
           </div>
         </div>
@@ -143,7 +143,8 @@ export default function HomePage() {
       <div className={styles.experience_section}>
         <div className={styles.ex_card}>
           <h2 className={styles.ex_card_number} ref={ref}>
-            0{experience}
+            {experience < 10 ? 0 : ""}
+            {experience}
           </h2>
           <p className={styles.ex_card_text}>YEARS OF EXPERIENCE</p>
         </div>
@@ -158,7 +159,7 @@ export default function HomePage() {
         </div>
         <div className={styles.ex_card}>
           <h2 className={styles.ex_card_number}>0{awards}</h2>
-          <p className={styles.ex_card_text}>AWARDS WON</p>
+          <p className={styles.ex_card_text}>SERVICES</p>
         </div>
       </div>
     </main>

@@ -9,28 +9,28 @@ export default function Services() {
   const services = [
     {
       serviceName: "Individual Counselling",
-      serviceImage: "/images/services/individual.png",
-      serviceIcon: "/images/services/individual-icon.png",
+      serviceImage: "/images/services/individual.webp",
+      serviceIcon: "/images/services/individual-icon.svg",
     },
     {
       serviceName: "Group Counselling",
-      serviceImage: "/images/services/group.png",
-      serviceIcon: "/images/services/group-icon.png",
+      serviceImage: "/images/services/group.webp",
+      serviceIcon: "/images/services/group-icon.svg",
     },
     {
       serviceName: "Career Coaching",
-      serviceImage: "/images/services/career.png",
-      serviceIcon: "/images/services/career-icon.png",
+      serviceImage: "/images/services/career.webp",
+      serviceIcon: "/images/services/career-icon.svg",
     },
     {
       serviceName: "Conference Speaking",
-      serviceImage: "/images/services/conference.png",
-      serviceIcon: "/images/services/conference-icon.png",
+      serviceImage: "/images/services/conference.webp",
+      serviceIcon: "/images/services/conference-icon.svg",
     },
     {
       serviceName: "Facilitating",
-      serviceImage: "/images/services/facilitating.png",
-      serviceIcon: "/images/services/facilitating-icon.png",
+      serviceImage: "/images/services/facilitating.webp",
+      serviceIcon: "/images/services/facilitating-icon.svg",
     },
   ];
   return (
